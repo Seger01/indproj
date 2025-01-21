@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# build folder
+code/build/
+
+# ignore compile commands
+code/compile_commands.json
+
+# ignore text editor cache
+code/.cache/
