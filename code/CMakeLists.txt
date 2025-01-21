@@ -23,6 +23,9 @@ include_directories(${INC_DIR})
 # Collect all source files recursively
 file(GLOB_RECURSE SOURCES ${SRC_DIR}/*.cpp ${SRC_DIR}/*.c)
 
+# Set the output directory for the executable
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 # Add the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
 
@@ -50,6 +53,6 @@ if(CMAKE_EXPORT_COMPILE_COMMANDS)
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
             ${CMAKE_BINARY_DIR}/compile_commands.json
             ${COMPILE_COMMANDS_OUTPUT_DIR}/compile_commands.json
-        COMMENT "Copying compile_commands.json to ${COMPILE_COMMANDS_OUTPUT_DIR}"
+        # COMMENT "Copying compile_commands.json to ${COMPILE_COMMANDS_OUTPUT_DIR}"
     )
 endif()
