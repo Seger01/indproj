@@ -41,7 +41,7 @@ endforeach()
 find_package(OpenGL REQUIRED)
 
 # Link external libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw OpenGL::GL)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw OpenGL::GL glm)
 
 
 if(CMAKE_EXPORT_COMPILE_COMMANDS)
