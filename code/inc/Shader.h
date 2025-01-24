@@ -54,18 +54,18 @@ public:
         vertex = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertex, 1, &vShaderCode, NULL);
         glCompileShader(vertex);
-        checkCompileErrors(vertex, "VERTEX");
+        checkCompileErrors(vertex, "VERTEX", vertexPath);
         // fragment Shader
         fragment = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragment, 1, &fShaderCode, NULL);
         glCompileShader(fragment);
-        checkCompileErrors(fragment, "FRAGMENT");
+        checkCompileErrors(fragment, "FRAGMENT", fragmentPath);
         // shader Program
         shaderProgramID = glCreateProgram();
         glAttachShader(shaderProgramID, vertex);
         glAttachShader(shaderProgramID, fragment);
         glLinkProgram(shaderProgramID);
-        checkCompileErrors(shaderProgramID, "PROGRAM");
+        checkCompileErrors(shaderProgramID, "PROGRAM", "Program Linking Stage");
         // delete the shaders as they're linked into our program now and no longer necessary
         glDeleteShader(vertex);
         glDeleteShader(fragment);
@@ -148,7 +148,7 @@ public:
 private:
     // utility function for checking shader compilation/linking errors.
     // ------------------------------------------------------------------------
-    void checkCompileErrors(GLuint shader, std::string type)
+    void checkCompileErrors(GLuint shader, std::string type, std::string fileName)
     {
         GLint success;
         GLchar infoLog[1024];
@@ -157,6 +157,7 @@ private:
             glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
             if (!success)
             {
+                std::cout << "ERROR from: " << fileName << std::endl << std::endl;
                 glGetShaderInfoLog(shader, 1024, NULL, infoLog);
                 std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n"
                           << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
@@ -167,6 +168,7 @@ private:
             glGetProgramiv(shader, GL_LINK_STATUS, &success);
             if (!success)
             {
+                std::cout << "ERROR from: " << fileName << std::endl << std::endl;
                 glGetProgramInfoLog(shader, 1024, NULL, infoLog);
                 std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n"
                           << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
