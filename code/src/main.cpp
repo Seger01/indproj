@@ -1,3 +1,4 @@
+#include <X11/Xlib.h>
 #include <glad/glad.h>
 
 #include <GLFW/glfw3.h>
@@ -7,6 +8,7 @@
 #include <stb_image/stb_image.h>
 
 #include <iostream>
+#include <string>
 
 #include "Camera.h"
 #include "Shader.h"
@@ -138,58 +140,6 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // // load and create a texture
-    // // -------------------------
-    // unsigned int texture1, texture2;
-    // // texture 1
-    // // ---------
-    // glGenTextures(1, &texture1);
-    // glBindTexture(GL_TEXTURE_2D, texture1);
-    // // set the texture wrapping parameters
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // // set texture filtering parameters
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // // load image, create texture and generate mipmaps
-    // int width, height, nrChannels;
-    // stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
-    // unsigned char* data = stbi_load("resources/container.jpg", &width, &height, &nrChannels, 0);
-    // if (data)
-    // {
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-    //     glGenerateMipmap(GL_TEXTURE_2D);
-    // }
-    // else
-    // {
-    //     std::cout << "Failed to load texture" << std::endl;
-    // }
-    // stbi_image_free(data);
-    // // texture 2
-    // // ---------
-    // glGenTextures(1, &texture2);
-    // glBindTexture(GL_TEXTURE_2D, texture2);
-    // // set the texture wrapping parameters
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // // set texture filtering parameters
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // // load image, create texture and generate mipmaps
-    // data = stbi_load("resources/awesomeface.png", &width, &height, &nrChannels, 0);
-    // if (data)
-    // {
-    //     // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the
-    //     // data type is of GL_RGBA
-    //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-    //     glGenerateMipmap(GL_TEXTURE_2D);
-    // }
-    // else
-    // {
-    //     std::cout << "Failed to load texture" << std::endl;
-    // }
-    // stbi_image_free(data);
-
     // load and create a texture
     // -------------------------
     unsigned int diffuseMap = loadTexture("resources/container2.png");
@@ -205,18 +155,43 @@ int main()
     lightingShader.setVec3("material.diffuse", 1.0f, 0.5f, 0.31f);
     lightingShader.setFloat("material.shininess", 32.0f);
 
-    lightingShader.setVec3("light.ambient", 0.1f, 0.1f, 0.1f);
-    lightingShader.setVec3("light.diffuse", 0.6f, 0.6f, 0.6f); // darken diffuse light a bit
-    lightingShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
-    lightingShader.setVec3("light.position", lightPos);
+    glm::vec3 pointLightPositions[] = {glm::vec3(0.7f, 0.2f, 2.0f), glm::vec3(2.3f, -3.3f, -4.0f),
+                                       glm::vec3(-4.0f, 2.0f, -12.0f), glm::vec3(0.0f, 0.0f, -3.0f)};
+
+    for (int i = 0; i < 4; i++)
+    {
+        lightingShader.setVec3("pointLights[" + std::to_string(i) + "].position", pointLightPositions[i]);
+
+        lightingShader.setVec3("pointLights[" + std::to_string(i) + "].ambient", glm::vec3(0.1f));
+        lightingShader.setVec3("pointLights[" + std::to_string(i) + "].diffuse", glm::vec3(0.6f));
+        lightingShader.setVec3("pointLights[" + std::to_string(i) + "].specular", glm::vec3(1.0f));
+
+        lightingShader.setFloat("pointLights[" + std::to_string(i) + "].constant", 1.0f);
+        lightingShader.setFloat("pointLights[" + std::to_string(i) + "].linear", 0.09f);
+        lightingShader.setFloat("pointLights[" + std::to_string(i) + "].quadratic", 0.032f);
+    }
+
+    // directional light
+    lightingShader.setVec3("dirLight.direction", glm::vec3(0.0f, -1.0f, 0.0f));
+    lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
+    lightingShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f); // darken diffuse light a bit
+    lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
 
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
     lightingShader.setInt("material.emission", 2);
 
-    lightingShader.setFloat("light.constant", 1.0f);
-    lightingShader.setFloat("light.linear", 0.09f);
-    lightingShader.setFloat("light.quadratic", 0.032f);
+    // spotLight
+    lightingShader.setVec3("spotLight.position", camera.Position);
+    lightingShader.setVec3("spotLight.direction", camera.Front);
+    lightingShader.setVec3("spotLight.ambient", 0.0f, 0.0f, 0.0f);
+    lightingShader.setVec3("spotLight.diffuse", 1.0f, 1.0f, 1.0f);
+    lightingShader.setVec3("spotLight.specular", 1.0f, 1.0f, 1.0f);
+    lightingShader.setFloat("spotLight.constant", 1.0f);
+    lightingShader.setFloat("spotLight.linear", 0.09f);
+    lightingShader.setFloat("spotLight.quadratic", 0.032f);
+    lightingShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
+    lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
 
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, diffuseMap);
@@ -224,19 +199,8 @@ int main()
     glBindTexture(GL_TEXTURE_2D, specularMap);
     glActiveTexture(GL_TEXTURE2);
     glBindTexture(GL_TEXTURE_2D, matrixTexture);
-    // shader.setInt("texture1", 0);
-    // shader.setInt("texture2", 1);
 
-    // glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-    //
-    // glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-    // glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-    //
-    // glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-    // glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-    //
-    // glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
-    Time::initialize();
+    own::Time::initialize();
     // glm::vec3 lightColor;
     // lightColor.x = sin(glfwGetTime() * 2.0f);
     // lightColor.y = sin(glfwGetTime() * 0.7f);
@@ -249,14 +213,14 @@ int main()
     // -----------
     while (!glfwWindowShouldClose(window))
     {
-        Time::update();
+        own::Time::update();
         // input
         // -----
         processInput(window);
 
         // render
         // ------
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // also clear the depth buffer now!
 
         // activate shader
@@ -273,23 +237,20 @@ int main()
         glm::mat4 projection = glm::mat4(1.0f);
         projection =
             glm::perspective(glm::radians(camera.Zoom), (float)Screen_width / (float)Screen_height, 0.1f, 100.0f);
+
         glm::mat4 view = camera.GetViewMatrix();
+
         lightingShader.setMat4("projection", projection); // note: currently we set the projection matrix each
         lightingShader.setMat4("view", view);
         lightingShader.setVec3("viewPos", camera.Position);
 
-        lightingShader.setVec3("light.position", camera.Position);
-        lightingShader.setVec3("light.direction", camera.Front);
-        lightingShader.setFloat("light.cutOff", glm::cos(glm::radians(7.5f)));
-        lightingShader.setFloat("light.outerCutOff", glm::cos(glm::radians(12.5f)));
+        // spotLight
+        lightingShader.setVec3("spotLight.position", camera.Position);
+        lightingShader.setVec3("spotLight.direction", camera.Front);
+
         // render boxes
         glBindVertexArray(VAO);
         glm::mat4 model = glm::mat4(1.0f);
-        // model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-        // lightingShader.setMat4("model", model);
-        // lightingShader.setVec3("viewPos", camera.Position);
-        //
-        // glDrawArrays(GL_TRIANGLES, 0, 36);
 
         for (unsigned int i = 0; i < 10; i++)
         {
@@ -304,18 +265,21 @@ int main()
 
         lightSourceShader.use();
         glBindVertexArray(lightVAO);
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, lightPos);
-        model = glm::scale(model, glm::vec3(0.2f));
-        lightSourceShader.setMat4("model", model);
+
         lightSourceShader.setMat4("projection", projection); // note: currently we set the projection matrix each
         lightSourceShader.setMat4("view", view);
-
         lightSourceShader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
-        glDrawArrays(GL_TRIANGLES, 0, 36);
 
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-        // -------------------------------------------------------------------------------
+        for (int i = 0; i < 4; i++)
+        {
+            model = glm::mat4(1.0f);
+            model = glm::translate(model, pointLightPositions[i]);
+            model = glm::scale(model, glm::vec3(0.2f));
+            lightSourceShader.setMat4("model", model);
+
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
@@ -339,26 +303,26 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::FORWARD, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::FORWARD, (float)own::Time::deltaTime);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::LEFT, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::LEFT, (float)own::Time::deltaTime);
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::BACKWARD, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::BACKWARD, (float)own::Time::deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::RIGHT, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::RIGHT, (float)own::Time::deltaTime);
 
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::UP, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::UP, (float)own::Time::deltaTime);
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-        camera.ProcessKeyboard(Camera_Movement::DOWN, (float)Time::deltaTime);
+        camera.ProcessKeyboard(Camera_Movement::DOWN, (float)own::Time::deltaTime);
 
     if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
     {
-        lightPos.x += 1.0f * Time::deltaTime;
+        lightPos.x += 1.0f * own::Time::deltaTime;
     }
     if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
     {
-        lightPos.x -= 1.0f * Time::deltaTime;
+        lightPos.x -= 1.0f * own::Time::deltaTime;
     }
 }
 
