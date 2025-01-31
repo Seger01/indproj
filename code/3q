@@ -228,29 +228,25 @@ int main()
         // -----
         processInput(window);
 
-        glEnable(GL_DEPTH_TEST);
-        glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-
+        // render
+        // ------
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // also clear the depth buffer now!
 
-        // glStencilMask(0x00);
-
-        glStencilFunc(GL_ALWAYS, 1, 0xFF);
-        glStencilMask(0xFF);
         // activate shader
         lightingShader.use();
-
-        // glEnable(GL_DEPTH_TEST);
-        // glEnable(GL_STENCIL_TEST);
-        //
-        // glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
 
         // directional light
         lightingShader.setVec3("dirLight.direction", glm::vec3(0.0f, -1.0f, 0.0f));
         lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
         lightingShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f); // darken diffuse light a bit
         lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+        // glActiveTexture(GL_TEXTURE0);
+        // glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        // glActiveTexture(GL_TEXTURE1);
+        // glBindTexture(GL_TEXTURE_2D, specularMap);
+        // glActiveTexture(GL_TEXTURE2);
+        // glBindTexture(GL_TEXTURE_2D, matrixTexture);
 
         // create transformations
         glm::mat4 projection = glm::mat4(1.0f);
@@ -287,23 +283,42 @@ int main()
         backpack.Draw(lightingShader);
 
         glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-        glStencilMask(0x00);
+        glStencilMask(0x00); // disable writing to the stencil buffer
         glDisable(GL_DEPTH_TEST);
+        shaderSingleColor.use();
+        DrawTwoScaledUpContainers();
 
-        outlineShader.use();
+        // // render boxes
+        // glBindVertexArray(VAO);
+        // glm::mat4 model = glm::mat4(1.0f);
+        //
+        // for (unsigned int i = 0; i < 10; i++)
+        // {
+        //     glm::mat4 model = glm::mat4(1.0f);
+        //     model = glm::translate(model, cubePositions[i]);
+        //     float angle = 20.0f * i;
+        //     model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+        //     lightingShader.setMat4("model", model);
+        //
+        //     glDrawArrays(GL_TRIANGLES, 0, 36);
+        // }
 
-        model = glm::scale(model, glm::vec3(1.1f));
-        // model = glm::translate(model, glm::vec3(2.0f, 0.0f, 0.0f));
-        outlineShader.setMat4("model", model);
-        outlineShader.setMat4("projection", projection); // note: currently we set the projection matrix each
-        outlineShader.setMat4("view", view);
-        // lightingShader.setVec3("viewPos", camera.Position);
-
-        backpack.Draw(outlineShader);
-
-        glStencilMask(0xFF);
-        glStencilFunc(GL_ALWAYS, 1, 0xFF);
-        glEnable(GL_DEPTH_TEST);
+        // lightSourceShader.use();
+        // glBindVertexArray(lightVAO);
+        //
+        // lightSourceShader.setMat4("projection", projection); // note: currently we set the projection matrix each
+        // lightSourceShader.setMat4("view", view);
+        // lightSourceShader.setVec3("lightColor", glm::vec3(1.0f, 1.0f, 1.0f));
+        //
+        // for (int i = 0; i < 4; i++)
+        // {
+        //     model = glm::mat4(1.0f);
+        //     model = glm::translate(model, pointLightPositions[i]);
+        //     model = glm::scale(model, glm::vec3(0.2f));
+        //     lightSourceShader.setMat4("model", model);
+        //
+        //     glDrawArrays(GL_TRIANGLES, 0, 36);
+        // }
 
         glfwSwapBuffers(window);
         glfwPollEvents();
