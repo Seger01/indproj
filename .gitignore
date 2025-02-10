@@ -32,9 +32,12 @@
 
 # build folder
 code/build/
+FMLCode/build/
 
 # ignore compile commands
 code/compile_commands.json
+FMLCode/compile_commands.json
 
 # ignore text editor cache
 code/.cache/
+FMLCode/.cache/

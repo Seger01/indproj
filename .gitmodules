@@ -7,3 +7,12 @@
 [submodule "code/external/assimp"]
 	path = code/external/assimp
 	url = https://github.com/assimp/assimp.git
+[submodule "FMLCode/external/glfw"]
+	path = FMLCode/external/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "FMLCode/external/glm"]
+	path = FMLCode/external/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "FMLCode/external/assimp"]
+	path = FMLCode/external/assimp
+	url = https://github.com/assimp/assimp.git
