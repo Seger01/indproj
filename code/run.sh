@@ -4,13 +4,13 @@ mkdir build &> /dev/null
 
 cd build || exit 1
 
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release .. >> /dev/null
+cmake  -DCMAKE_BUILD_TYPE=Release .. >> /dev/null # -G Ninja
 if [ $? -ne 0 ]; then
     echo "CMake configuration failed."
     exit 1
 fi
 
-ninja
+make -j16
 
 if [ $? -ne 0 ]; then
     echo "Build failed."
