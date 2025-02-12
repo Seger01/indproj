@@ -4,6 +4,7 @@
 #include "FMLTexture.h"
 #include "GLFW/glfw3.h"
 
+#include "Point.h"
 #include "Vector2.h"
 
 class FMLWindow
@@ -15,7 +16,7 @@ public:
     void clear(const FMLColor& color);
     void show();
 
-    Vector2 getWindowSize();
+    Point getWindowSize();
 
     bool shouldClose();
 

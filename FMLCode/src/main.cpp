@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <thread>
 
 #include "Camera.h"
 #include "FMLColor.h"
@@ -63,7 +64,7 @@ int main()
     //     0.5f,  -0.5f, 0.0f, 1.0f, 0.0f  // bottom right
     // };
 
-    FMLRenderer renderer(window.getWindow());
+    FMLRenderer renderer(window);
 
     TexturedQuad texturedQuad;
     // unsigned int matrixTexture = loadTexture("resources/matrix.jpg");
@@ -84,7 +85,9 @@ int main()
         // render the triangle
         texturedQuad.bindVAO();
 
-        renderer.renderTexture(matrixTexture);
+        Point windowSize = window.getWindowSize();
+
+        renderer.renderTexture(matrixTexture, 100, 100, 280, 520);
 
         // lightingShader.use();
         // create transformations
@@ -98,6 +101,9 @@ int main()
 
         renderer.show();
         glfwPollEvents();
+
+        // wait 16ms to simulate 60fps
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
     }
 
     // glfw: terminate, clearing all previously allocated GLFW resources.

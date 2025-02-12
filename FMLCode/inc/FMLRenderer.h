@@ -2,25 +2,25 @@
 
 #include "glad/glad.h"
 
-#include "GLFW/glfw3.h"
-
 #include "FMLColor.h"
 #include "FMLTexture.h"
 #include "Shader.h"
 
+class FMLWindow;
+
 class FMLRenderer
 {
 public:
-    FMLRenderer(GLFWwindow* window);
+    FMLRenderer(FMLWindow& window);
     virtual ~FMLRenderer() = default;
 
     void clear(const FMLColor& color);
     void show();
 
-    void renderTexture(const FMLTexture& texture);
+    void renderTexture(const FMLTexture& texture, int x, int y, int width, int height);
 
 private:
-    GLFWwindow* window;
+    FMLWindow& window;
 
     Shader standardShader;
 };

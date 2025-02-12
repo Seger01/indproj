@@ -2,7 +2,11 @@
 
 #include <glad/glad.h>
 
-FMLRenderer::FMLRenderer(GLFWwindow* window)
+#include "GLFW/glfw3.h"
+
+#include "FMLWindow.h"
+
+FMLRenderer::FMLRenderer(FMLWindow& window)
     : standardShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"), window(window)
 {
     standardShader.use();
@@ -17,12 +21,26 @@ void FMLRenderer::clear(const FMLColor& color)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void FMLRenderer::show() { glfwSwapBuffers(window); }
+void FMLRenderer::show() { glfwSwapBuffers(window.getWindow()); }
 
-void FMLRenderer::renderTexture(const FMLTexture& texture)
+void FMLRenderer::renderTexture(const FMLTexture& texture, int x, int y, int width, int height)
 {
+    Point windowSize = window.getWindowSize();
+
     standardShader.use();
     standardShader.setInt("texture1", 0);
+
+    standardShader.setInt("screenSize.x", windowSize.x);
+    standardShader.setInt("screenSize.y", windowSize.y);
+
+    standardShader.setInt("objectPosition.x", x);
+    standardShader.setInt("objectPosition.y", y);
+
+    standardShader.setInt("objectSize.x", width);
+    standardShader.setInt("objectSize.y", height);
+
+    standardShader.setInt("objectCenter.x", x + width / 2);
+    standardShader.setInt("objectCenter.y", y + height / 2);
 
     // activate texture
     texture.activate();

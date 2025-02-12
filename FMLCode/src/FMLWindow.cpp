@@ -51,11 +51,11 @@ void FMLWindow::clear(const FMLColor& color)
 
 void FMLWindow::show() { glfwSwapBuffers(window); }
 
-Vector2 FMLWindow::getWindowSize()
+Point FMLWindow::getWindowSize()
 {
     int width, height;
     glfwGetWindowSize(window, &width, &height);
-    return Vector2(width, height);
+    return Point(width, height);
 }
 
 bool FMLWindow::shouldClose() { return glfwWindowShouldClose(window); }
