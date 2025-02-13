@@ -1,5 +1,6 @@
 #pragma once
 
+#include "TexturedQuad.h"
 #include "glad/glad.h"
 
 #include "FMLColor.h"
@@ -7,6 +8,7 @@
 #include "Shader.h"
 
 class FMLWindow;
+class Rect;
 
 class FMLRenderer
 {
@@ -17,10 +19,15 @@ public:
     void clear(const FMLColor& color);
     void show();
 
-    void renderTexture(const FMLTexture& texture, int x, int y, int width, int height);
+    void drawTexture(const FMLTexture& texture, const Rect& source, int x, int y, int width, int height,
+                     float rotation = 0.0f);
+    void drawRect(int x, int y, int width, int height, const FMLColor& color, float rotation = 0.0f);
 
 private:
     FMLWindow& window;
 
-    Shader standardShader;
+    Shader texturedQuadShader;
+    Shader rectShader;
+
+    TexturedQuad texturedQuad;
 };

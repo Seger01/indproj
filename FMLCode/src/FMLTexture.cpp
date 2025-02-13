@@ -11,9 +11,15 @@ void FMLTexture::activate() const
 {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mTextureID);
+
+    // set pixelart settings
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 }
 
 unsigned int FMLTexture::getTextureID() const { return mTextureID; }
+
+Vector2 FMLTexture::getSize() const { return mSize; }
 
 void FMLTexture::loadTexture()
 {
@@ -42,12 +48,14 @@ void FMLTexture::loadTexture()
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
         stbi_image_free(data);
+
+        mSize = Vector2(width, height);
+
+        mTextureID = textureID;
     }
     else
     {
         std::cout << "Texture failed to load at path: " << mFilePath << std::endl;
         stbi_image_free(data);
     }
-
-    mTextureID = textureID;
 }

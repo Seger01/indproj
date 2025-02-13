@@ -17,6 +17,7 @@
 #include "FMLWindow.h"
 #include "Mesh.h"
 #include "Model.h"
+#include "Rect.h"
 #include "Shader.h"
 #include "Shape.h"
 #include "TexturedQuad.h"
@@ -46,36 +47,16 @@ int main()
 
     stbi_set_flip_vertically_on_load(true);
 
-    // configure global opengl state
-    // -----------------------------
-
-    // build and compile our shader zprogram
-    // ------------------------------------
-
-    // // define vertices for a triangle
-    // std::vector<float> vertices = {
-    //     // positions // texture coords
-    //     -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
-    //     -0.5f, 0.5f,  0.0f, 0.0f, 1.0f, // top left
-    //     0.5f,  0.5f,  0.0f, 1.0f, 1.0f, // top right
-    //
-    //     -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
-    //     0.5f,  0.5f,  0.0f, 1.0f, 1.0f, // top right
-    //     0.5f,  -0.5f, 0.0f, 1.0f, 0.0f  // bottom right
-    // };
-
     FMLRenderer renderer(window);
+    // FMLTexture matrixTexture("resources/matrix.jpg");
+    FMLTexture matrixTexture("resources/DinoSprites.png");
 
-    TexturedQuad texturedQuad;
-    // unsigned int matrixTexture = loadTexture("resources/matrix.jpg");
-    FMLTexture matrixTexture("resources/matrix.jpg");
-
-    own::Time::initialize();
+    FML::Time::initialize();
     // render loop
     // -----------
     while (!window.shouldClose())
     {
-        own::Time::update();
+        FML::Time::update();
         // input
         // -----
         // processInput(window);
@@ -83,21 +64,16 @@ int main()
         renderer.clear(FMLColor(255, 0, 0));
 
         // render the triangle
-        texturedQuad.bindVAO();
 
         Point windowSize = window.getWindowSize();
 
-        renderer.renderTexture(matrixTexture, 100, 100, 280, 520);
+        renderer.drawRect(100, 300, 200, 200, FMLColor(0, 0, 255), int(FML::Time::ticks / 10 * 1000) % 360);
+        renderer.drawRect(300, 100, 200, 200, FMLColor(255, 255, 0), int(FML::Time::ticks / 10 * 1000) % 360);
+        renderer.drawRect(300, 300, 200, 200, FMLColor(255, 0, 255), int(FML::Time::ticks / 10 * 1000) % 360);
 
-        // lightingShader.use();
-        // create transformations
-        // glm::mat4 projection = glm::mat4(1.0f);
-        // projection =
-        //     glm::perspective(glm::radians(camera.Zoom), (float)Screen_width / (float)Screen_height, 0.1f, 100.0f);
-        //
-        // glm::mat4 view = camera.GetViewMatrix();
-
-        glm::mat4 model = glm::mat4(1.0f);
+        renderer.drawRect(100, 100, 200, 200, FMLColor(0, 255, 0, 200), int(FML::Time::ticks / 10 * 1000) % 360);
+        renderer.drawTexture(matrixTexture, Rect(4, 3, 15, 17), 100, 100, 200, 200,
+                             int(FML::Time::ticks / 10 * 1000) % 360);
 
         renderer.show();
         glfwPollEvents();

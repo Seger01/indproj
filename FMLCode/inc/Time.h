@@ -13,7 +13,7 @@
  * @brief Class for handling the ticks and the delta time of the game.
  */
 
-namespace own
+namespace FML
 {
 
 class Time
@@ -61,6 +61,6 @@ private:
     static std::chrono::high_resolution_clock::time_point lastFrameTime;
 };
 
-} // namespace own
+} // namespace FML
 
 #endif // TIME_H
