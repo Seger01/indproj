@@ -25,7 +25,8 @@
 
 FMLRenderer::FMLRenderer(FMLWindow& window)
     : texturedQuadShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"),
-      rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"), window(window)
+      rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"),
+      circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"), window(window)
 {
     texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
@@ -139,4 +140,34 @@ void FMLRenderer::drawRect(int x, int y, int width, int height, const FMLColor& 
         glDrawArrays(GL_TRIANGLES, 0, 6);
     else
         glDrawArrays(GL_LINE_LOOP, 0, 4);
+}
+
+void FMLRenderer::drawCircle(int x, int y, int radius, const FMLColor& color, bool fill, int lineWidth)
+{
+    texturedQuad.bindVAO();
+
+    Point windowSize = window.getWindowSize();
+
+    circleShader.use();
+
+    glm::mat4 projection =
+        glm::ortho(0.0f, static_cast<float>(windowSize.x), static_cast<float>(windowSize.y), 0.0f, -1.0f, 1.0f);
+    glm::mat4 model = glm::mat4(1.0f);
+
+    model = glm::translate(model, glm::vec3(x, y, 0.0f));
+
+    model = glm::scale(model, glm::vec3(radius, radius, 1.0f));
+
+    // Set shader uniforms
+    circleShader.setMat4("model", model);
+    circleShader.setMat4("projection", projection);
+    if (fill)
+        circleShader.setFloat("innerRadius", 0.0f);
+    else
+        circleShader.setFloat("innerRadius", float(radius - lineWidth) / radius / 2);
+
+    circleShader.setVec4("color",
+                         glm::vec4(color.normalize().r, color.normalize().g, color.normalize().b, color.normalize().a));
+
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 }

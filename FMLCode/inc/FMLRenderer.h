@@ -27,12 +27,14 @@ public:
                      const Point& rotationalCenter = Point(INT_MAX, INT_MAX));
     void drawRect(int x, int y, int width, int height, const FMLColor& color, bool fill = true, float rotation = 0.0f,
                   const Point& rotationalCenter = Point(INT_MAX, INT_MAX));
+    void drawCircle(int x, int y, int radius, const FMLColor& color, bool fill = true, int lineWidth = 1);
 
 private:
     FMLWindow& window;
 
     Shader texturedQuadShader;
     Shader rectShader;
+    Shader circleShader;
 
     TexturedQuad texturedQuad;
     UnfilledBox unfilledBox;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 #include "FMLNormColor.h"
 
 class FMLColor
@@ -13,5 +15,5 @@ public:
 
     FMLNormColor normalize() const { return FMLNormColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f); }
 
-    unsigned int r, g, b, a;
+    uint8_t r, g, b, a;
 };

@@ -112,10 +112,13 @@ int main()
                           Point(0, 0));
 
         RGB hue = hueToRGB(int(FML::Time::ticks / 10 * 1000) % 360);
-        // renderer.drawTexture(matrixTexture, Rect(4, 3, 15, 17), 600, 600, 200, 200,
-        //                      int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(hue.r, hue.g, hue.b, 255));
-        renderer.drawTexture(matrixTexture, Rect(), 600, 600, 300, 100, false, false,
-                             int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(), Point(0, 0));
+        renderer.drawTexture(matrixTexture, Rect(), 600, 600, 200, 200, false, false,
+                             int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(hue.r, hue.g, hue.b, 255));
+
+        renderer.drawCircle(300, 300, 400, FMLColor(hue.r, hue.g, hue.b), false,
+                            400 - (int(FML::Time::ticks / 10 * 1000) % 400));
+        // renderer.drawTexture(matrixTexture, Rect(), 600, 600, 300, 100, false, false,
+        //                      int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(), Point(0, 0));
 
         renderer.show();
         glfwPollEvents();

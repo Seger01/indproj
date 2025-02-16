@@ -8,3 +8,5 @@ Date,Time,Duration(in hours),Activity
 2025-02-10, 19:30, 2   , Started working on FML(Flexible Media Library)
 2025-02-12, 19:30, 2.5 , Worked on texture scaling and movement
 2025-02-13, 19:30, 2.5 , Reworked the texture scaling and movement and added colored square rendering and rotation of squares and textures
+2025-02-15, 10:00, 3   , Changed the texture scaling and rotation to be able to set the center of rotation. also added color filtering on textures and the ability to make rectangles that are not filled.
+2025-02-16, 15:00, 2   , Worked on circle rendering (source: The Cherno (youtube) https://www.youtube.com/watch?v=xf7Y988cPRk)
