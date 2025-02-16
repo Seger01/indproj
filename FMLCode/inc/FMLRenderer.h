@@ -1,11 +1,13 @@
 #pragma once
 
-#include "TexturedQuad.h"
 #include "glad/glad.h"
 
 #include "FMLColor.h"
 #include "FMLTexture.h"
+#include "Point.h"
 #include "Shader.h"
+#include "TexturedQuad.h"
+#include "UnfilledBox.h"
 
 class FMLWindow;
 class Rect;
@@ -20,8 +22,11 @@ public:
     void show();
 
     void drawTexture(const FMLTexture& texture, const Rect& source, int x, int y, int width, int height,
-                     float rotation = 0.0f);
-    void drawRect(int x, int y, int width, int height, const FMLColor& color, float rotation = 0.0f);
+                     bool flipX = false, bool flipY = false, float rotation = 0.0f,
+                     const FMLColor& colorFilter = FMLColor(255, 255, 255, 255),
+                     const Point& rotationalCenter = Point(INT_MAX, INT_MAX));
+    void drawRect(int x, int y, int width, int height, const FMLColor& color, bool fill = true, float rotation = 0.0f,
+                  const Point& rotationalCenter = Point(INT_MAX, INT_MAX));
 
 private:
     FMLWindow& window;
@@ -30,4 +35,5 @@ private:
     Shader rectShader;
 
     TexturedQuad texturedQuad;
+    UnfilledBox unfilledBox;
 };

@@ -45,20 +45,33 @@ void FMLRenderer::clear(const FMLColor& color)
 void FMLRenderer::show() { glfwSwapBuffers(window.getWindow()); }
 
 void FMLRenderer::drawTexture(const FMLTexture& texture, const Rect& source, int x, int y, int width, int height,
-                              float rotation)
+                              bool flipX, bool flipY, float rotation, const FMLColor& colorFilter,
+                              const Point& rotationalCenter)
 {
     texturedQuad.bindVAO();
-
-    Point windowSize = window.getWindowSize();
-
+    texture.activate();
     texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
+
+    Point windowSize = window.getWindowSize();
 
     glm::mat4 projection = glm::ortho(0.0f, (float)windowSize.x, (float)windowSize.y, 0.0f, -1.0f, 1.0f);
     glm::mat4 model = glm::mat4(1.0f);
 
     model = glm::translate(model, glm::vec3(x, y, 0.0f));
-    model = glm::rotate(model, glm::radians((float)rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    // account for rotational center if given
+    if (rotationalCenter.x != INT_MAX && rotationalCenter.y != INT_MAX)
+        model =
+            glm::translate(model, glm::vec3(rotationalCenter.x - (width / 2), rotationalCenter.y - (height / 2), 0.0f));
+
+    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    // Reverse the rotational center translation
+    if (rotationalCenter.x != INT_MAX && rotationalCenter.y != INT_MAX)
+        model = glm::translate(
+            model, glm::vec3(-(rotationalCenter.x - (width / 2)), -(rotationalCenter.y - (height / 2)), 0.0f));
+
     model = glm::scale(model, glm::vec3(width, height, 1.0f));
 
     texturedQuadShader.setMat4("model", model);
@@ -75,31 +88,55 @@ void FMLRenderer::drawTexture(const FMLTexture& texture, const Rect& source, int
                                 (float)source.w / texture.getSize().x, (float)source.h / texture.getSize().y));
     }
 
-    texture.activate();
+    texturedQuadShader.setInt("flipX", flipX ? -1 : 1);
+    texturedQuadShader.setInt("flipY", flipY ? 1 : -1);
+    texturedQuadShader.setVec4("colorFilter", glm::vec4(colorFilter.normalize().r, colorFilter.normalize().g,
+                                                        colorFilter.normalize().b, colorFilter.normalize().a));
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-void FMLRenderer::drawRect(int x, int y, int width, int height, const FMLColor& color, float rotation)
+void FMLRenderer::drawRect(int x, int y, int width, int height, const FMLColor& color, bool fill, float rotation,
+                           const Point& rotationalCenter)
 {
-    texturedQuad.bindVAO();
+    if (fill)
+        texturedQuad.bindVAO();
+    else
+        unfilledBox.bindVAO();
 
     Point windowSize = window.getWindowSize();
 
     rectShader.use();
 
-    glm::mat4 projection = glm::ortho(0.0f, (float)windowSize.x, (float)windowSize.y, 0.0f, -1.0f, 1.0f);
+    glm::mat4 projection =
+        glm::ortho(0.0f, static_cast<float>(windowSize.x), static_cast<float>(windowSize.y), 0.0f, -1.0f, 1.0f);
     glm::mat4 model = glm::mat4(1.0f);
 
+    // Step 1: Translate to the rectangle's position
     model = glm::translate(model, glm::vec3(x, y, 0.0f));
-    model = glm::rotate(model, glm::radians((float)rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    if (rotationalCenter.x != INT_MAX && rotationalCenter.y != INT_MAX)
+        model =
+            glm::translate(model, glm::vec3(rotationalCenter.x - (width / 2), rotationalCenter.y - (height / 2), 0.0f));
+
+    // Step 3: Apply rotation around the z-axis
+    model = glm::rotate(model, glm::radians(rotation), glm::vec3(0.0f, 0.0f, 1.0f));
+
+    if (rotationalCenter.x != INT_MAX && rotationalCenter.y != INT_MAX)
+        model = glm::translate(
+            model, glm::vec3(-(rotationalCenter.x - (width / 2)), -(rotationalCenter.y - (height / 2)), 0.0f));
+
+    // Step 5: Scale the rectangle to its proper size
     model = glm::scale(model, glm::vec3(width, height, 1.0f));
 
+    // Set shader uniforms
     rectShader.setMat4("model", model);
     rectShader.setMat4("projection", projection);
-
     rectShader.setVec4("color",
                        glm::vec4(color.normalize().r, color.normalize().g, color.normalize().b, color.normalize().a));
 
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    if (fill)
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+    else
+        glDrawArrays(GL_LINE_LOOP, 0, 4);
 }

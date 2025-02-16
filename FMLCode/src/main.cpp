@@ -33,6 +33,47 @@ unsigned int Screen_height = 600;
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
+struct RGB
+{
+    int r, g, b;
+};
+
+RGB hueToRGB(float hue)
+{
+    float s = 1.0f, v = 1.0f; // Assume full saturation and brightness
+    float c = s * v;          // Chroma
+    float x = c * (1 - fabs(fmod(hue / 60.0, 2) - 1));
+    float m = v - c;
+
+    float r, g, b;
+    if (hue >= 0 && hue < 60)
+    {
+        r = c, g = x, b = 0;
+    }
+    else if (hue < 120)
+    {
+        r = x, g = c, b = 0;
+    }
+    else if (hue < 180)
+    {
+        r = 0, g = c, b = x;
+    }
+    else if (hue < 240)
+    {
+        r = 0, g = x, b = c;
+    }
+    else if (hue < 300)
+    {
+        r = x, g = 0, b = c;
+    }
+    else
+    {
+        r = c, g = 0, b = x;
+    }
+
+    return RGB{static_cast<int>((r + m) * 255), static_cast<int>((g + m) * 255), static_cast<int>((b + m) * 255)};
+}
+
 int main()
 {
     FMLWindow window(Screen_width, Screen_height);
@@ -61,19 +102,20 @@ int main()
         // -----
         // processInput(window);
 
-        renderer.clear(FMLColor(255, 0, 0));
+        renderer.clear(FMLColor(100, 100, 100));
 
         // render the triangle
+        renderer.drawRect(100, 100, 200, 200, FMLColor(0, 255, 0, 255), true, int(FML::Time::ticks / 10 * 1500) % 360);
+        renderer.drawRect(100, 300, 200, 200, FMLColor(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
+        renderer.drawRect(300, 100, 200, 200, FMLColor(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
+        renderer.drawRect(300, 300, 200, 200, FMLColor(255, 0, 255, 150), false, int(FML::Time::ticks / 10 * 500) % 360,
+                          Point(0, 0));
 
-        Point windowSize = window.getWindowSize();
-
-        renderer.drawRect(100, 300, 200, 200, FMLColor(0, 0, 255), int(FML::Time::ticks / 10 * 1000) % 360);
-        renderer.drawRect(300, 100, 200, 200, FMLColor(255, 255, 0), int(FML::Time::ticks / 10 * 1000) % 360);
-        renderer.drawRect(300, 300, 200, 200, FMLColor(255, 0, 255), int(FML::Time::ticks / 10 * 1000) % 360);
-
-        renderer.drawRect(100, 100, 200, 200, FMLColor(0, 255, 0, 200), int(FML::Time::ticks / 10 * 1000) % 360);
-        renderer.drawTexture(matrixTexture, Rect(4, 3, 15, 17), 100, 100, 200, 200,
-                             int(FML::Time::ticks / 10 * 1000) % 360);
+        RGB hue = hueToRGB(int(FML::Time::ticks / 10 * 1000) % 360);
+        // renderer.drawTexture(matrixTexture, Rect(4, 3, 15, 17), 600, 600, 200, 200,
+        //                      int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(hue.r, hue.g, hue.b, 255));
+        renderer.drawTexture(matrixTexture, Rect(), 600, 600, 300, 100, false, false,
+                             int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(), Point(0, 0));
 
         renderer.show();
         glfwPollEvents();

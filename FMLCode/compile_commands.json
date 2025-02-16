@@ -55,6 +55,12 @@
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/UnfilledBox.cpp.o -c /home/seger/projects/indproj/FMLCode/src/UnfilledBox.cpp",
+  "file": "/home/seger/projects/indproj/FMLCode/src/UnfilledBox.cpp",
+  "output": "CMakeFiles/indproj.dir/src/UnfilledBox.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build",
   "command": "/usr/bin/cc  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -o CMakeFiles/indproj.dir/src/glad/glad.c.o -c /home/seger/projects/indproj/FMLCode/src/glad/glad.c",
   "file": "/home/seger/projects/indproj/FMLCode/src/glad/glad.c",
   "output": "CMakeFiles/indproj.dir/src/glad/glad.c.o"
