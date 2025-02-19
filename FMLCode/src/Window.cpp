@@ -1,4 +1,4 @@
-#include "FMLWindow.h"
+#include "Window.h"
 
 #include <GLFW/glfw3.h>
 
@@ -9,9 +9,13 @@
 
 #include <iostream>
 
+#include "Point.h"
 #include "Vector2.h"
 
-FMLWindow::FMLWindow(int width, int height) : mScreenWidth(width), mScreenHeight(height)
+namespace FML
+{
+
+Window::Window(int width, int height) : mScreenWidth(width), mScreenHeight(height)
 {
     // glfw: initialize and configure
     // ------------------------------
@@ -43,22 +47,22 @@ FMLWindow::FMLWindow(int width, int height) : mScreenWidth(width), mScreenHeight
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 }
 
-void FMLWindow::clear(const FMLColor& color)
+void Window::clear(const Color& color)
 {
     glClearColor(color.normalize().r, color.normalize().g, color.normalize().b, color.normalize().a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void FMLWindow::show() { glfwSwapBuffers(window); }
+void Window::show() { glfwSwapBuffers(window); }
 
-Point FMLWindow::getWindowSize()
+Point Window::getWindowSize()
 {
     int width, height;
     glfwGetWindowSize(window, &width, &height);
     return Point(width, height);
 }
 
-bool FMLWindow::shouldClose() { return glfwWindowShouldClose(window); }
+bool Window::shouldClose() { return glfwWindowShouldClose(window); }
 
 // static void FMLWindow::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 // {
@@ -67,3 +71,5 @@ bool FMLWindow::shouldClose() { return glfwWindowShouldClose(window); }
 //
 //     glViewport(0, 0, width, height);
 // }
+
+} // namespace FML

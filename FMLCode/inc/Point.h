@@ -6,6 +6,9 @@
 #ifndef POINT_H
 #define POINT_H
 
+namespace FML
+{
+
 /**
  * @struct Point
  * @brief Represents a 2D point.
@@ -15,5 +18,7 @@ struct Point
     int x = 0;
     int y = 0;
 };
+
+} // namespace FML
 
 #endif

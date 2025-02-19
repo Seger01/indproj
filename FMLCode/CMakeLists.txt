@@ -65,7 +65,7 @@ endforeach()
 find_package(OpenGL REQUIRED)
 
 # Link external libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw OpenGL::GL glm assimp)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw OpenGL::GL glm assimp freetype)
 
 if(CMAKE_EXPORT_COMPILE_COMMANDS)
     set(COMPILE_COMMANDS_OUTPUT_DIR "${CMAKE_SOURCE_DIR}")

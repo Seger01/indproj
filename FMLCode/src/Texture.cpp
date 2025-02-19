@@ -1,13 +1,16 @@
-#include "FMLTexture.h"
+#include "Texture.h"
 
 #include <glad/glad.h>
 
 #include <iostream>
 #include <stb_image/stb_image.h>
 
-FMLTexture::FMLTexture(const std::string& filePath) : mFilePath(filePath) { loadTexture(); }
+namespace FML
+{
 
-void FMLTexture::activate() const
+Texture::Texture(const std::string& filePath) : mFilePath(filePath) { loadTexture(); }
+
+void Texture::activate() const
 {
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, mTextureID);
@@ -17,11 +20,11 @@ void FMLTexture::activate() const
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 }
 
-unsigned int FMLTexture::getTextureID() const { return mTextureID; }
+unsigned int Texture::getTextureID() const { return mTextureID; }
 
-Vector2 FMLTexture::getSize() const { return mSize; }
+Vector2 Texture::getSize() const { return mSize; }
 
-void FMLTexture::loadTexture()
+void Texture::loadTexture()
 {
     unsigned int textureID;
     glGenTextures(1, &textureID);
@@ -59,3 +62,5 @@ void FMLTexture::loadTexture()
         stbi_image_free(data);
     }
 }
+
+} // namespace FML

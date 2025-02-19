@@ -4,6 +4,9 @@
 
 #include "Shape.h"
 
+namespace FML
+{
+
 class UnfilledBox : public Shape
 {
 public:
@@ -20,3 +23,5 @@ private:
         0.5f,  -0.5f, 0.0f, 1.0f, 0.0f  // bottom right
     };
 };
+
+} // namespace FML

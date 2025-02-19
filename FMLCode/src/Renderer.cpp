@@ -1,10 +1,10 @@
-#include "FMLRenderer.h"
+#include "Renderer.h"
 
 #include <glad/glad.h>
 
 #include "GLFW/glfw3.h"
 
-#include "FMLWindow.h"
+#include "Window.h"
 
 #include <glad/glad.h>
 
@@ -16,14 +16,17 @@
 
 #include <string>
 
-#include "FMLColor.h"
-#include "FMLRenderer.h"
-#include "FMLTexture.h"
-#include "FMLWindow.h"
+#include "Color.h"
 #include "Rect.h"
+#include "Renderer.h"
 #include "Shader.h"
+#include "Texture.h"
+#include "Window.h"
 
-FMLRenderer::FMLRenderer(FMLWindow& window)
+namespace FML
+{
+
+Renderer::Renderer(Window& window)
     : texturedQuadShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"),
       rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"),
       circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"), window(window)
@@ -37,26 +40,25 @@ FMLRenderer::FMLRenderer(FMLWindow& window)
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void FMLRenderer::clear(const FMLColor& color)
+void Renderer::clear(const Color& color)
 {
     glClearColor(color.normalize().r, color.normalize().g, color.normalize().b, color.normalize().a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void FMLRenderer::show() { glfwSwapBuffers(window.getWindow()); }
+void Renderer::show() { glfwSwapBuffers(window.getWindow()); }
 
-void FMLRenderer::drawTexture(const FMLTexture& texture, const Rect& source, int x, int y, int width, int height,
-                              bool flipX, bool flipY, float rotation, const FMLColor& colorFilter,
-                              const Point& rotationalCenter)
+void Renderer::drawTexture(const Texture& texture, const Rect& source, int x, int y, int width, int height, bool flipX,
+                           bool flipY, float rotation, const Color& colorFilter, const Point& rotationalCenter)
 {
     texturedQuad.bindVAO();
     texture.activate();
     texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
 
-    Point windowSize = window.getWindowSize();
+    Point viewportSize = getViewportSize();
 
-    glm::mat4 projection = glm::ortho(0.0f, (float)windowSize.x, (float)windowSize.y, 0.0f, -1.0f, 1.0f);
+    glm::mat4 projection = glm::ortho(0.0f, (float)viewportSize.x, (float)viewportSize.y, 0.0f, -1.0f, 1.0f);
     glm::mat4 model = glm::mat4(1.0f);
 
     model = glm::translate(model, glm::vec3(x, y, 0.0f));
@@ -97,20 +99,20 @@ void FMLRenderer::drawTexture(const FMLTexture& texture, const Rect& source, int
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
-void FMLRenderer::drawRect(int x, int y, int width, int height, const FMLColor& color, bool fill, float rotation,
-                           const Point& rotationalCenter)
+void Renderer::drawRect(int x, int y, int width, int height, const Color& color, bool fill, float rotation,
+                        const Point& rotationalCenter)
 {
     if (fill)
         texturedQuad.bindVAO();
     else
         unfilledBox.bindVAO();
 
-    Point windowSize = window.getWindowSize();
+    Point viewportSize = getViewportSize();
 
     rectShader.use();
 
     glm::mat4 projection =
-        glm::ortho(0.0f, static_cast<float>(windowSize.x), static_cast<float>(windowSize.y), 0.0f, -1.0f, 1.0f);
+        glm::ortho(0.0f, static_cast<float>(viewportSize.x), static_cast<float>(viewportSize.y), 0.0f, -1.0f, 1.0f);
     glm::mat4 model = glm::mat4(1.0f);
 
     // Step 1: Translate to the rectangle's position
@@ -142,16 +144,16 @@ void FMLRenderer::drawRect(int x, int y, int width, int height, const FMLColor& 
         glDrawArrays(GL_LINE_LOOP, 0, 4);
 }
 
-void FMLRenderer::drawCircle(int x, int y, int radius, const FMLColor& color, bool fill, int lineWidth)
+void Renderer::drawCircle(int x, int y, int radius, const Color& color, bool fill, int lineWidth)
 {
     texturedQuad.bindVAO();
 
-    Point windowSize = window.getWindowSize();
+    Point viewportSize = getViewportSize();
 
     circleShader.use();
 
     glm::mat4 projection =
-        glm::ortho(0.0f, static_cast<float>(windowSize.x), static_cast<float>(windowSize.y), 0.0f, -1.0f, 1.0f);
+        glm::ortho(0.0f, static_cast<float>(viewportSize.x), static_cast<float>(viewportSize.y), 0.0f, -1.0f, 1.0f);
     glm::mat4 model = glm::mat4(1.0f);
 
     model = glm::translate(model, glm::vec3(x, y, 0.0f));
@@ -171,3 +173,29 @@ void FMLRenderer::drawCircle(int x, int y, int radius, const FMLColor& color, bo
 
     glDrawArrays(GL_TRIANGLES, 0, 6);
 }
+
+void Renderer::setViewport(const Rect& rect)
+{
+    if (rect.w == 0 || rect.h == 0)
+    {
+        glViewport(0, 0, window.getWindowSize().x, window.getWindowSize().y);
+        return;
+    }
+
+    glViewport(rect.x, rect.y, rect.w, rect.h);
+}
+
+Rect Renderer::getViewport()
+{
+    int viewport[4];
+    glGetIntegerv(GL_VIEWPORT, viewport);
+    return Rect(viewport[0], viewport[1], viewport[2], viewport[3]);
+}
+
+Point Renderer::getViewportSize()
+{
+    Rect viewport = getViewport();
+    return Point(viewport.w, viewport.h);
+}
+
+} // namespace FML

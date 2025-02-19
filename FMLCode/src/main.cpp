@@ -11,17 +11,17 @@
 #include <thread>
 
 #include "Camera.h"
-#include "FMLColor.h"
-#include "FMLRenderer.h"
-#include "FMLTexture.h"
-#include "FMLWindow.h"
+#include "Color.h"
 #include "Mesh.h"
 #include "Model.h"
 #include "Rect.h"
+#include "Renderer.h"
 #include "Shader.h"
 #include "Shape.h"
+#include "Texture.h"
 #include "TexturedQuad.h"
 #include "Time.h"
+#include "Window.h"
 
 unsigned int loadTexture(std::string fileName);
 
@@ -76,7 +76,7 @@ RGB hueToRGB(float hue)
 
 int main()
 {
-    FMLWindow window(Screen_width, Screen_height);
+    FML::Window window(Screen_width, Screen_height);
 
     // glad: load all OpenGL function pointers
     // ---------------------------------------
@@ -88,9 +88,9 @@ int main()
 
     stbi_set_flip_vertically_on_load(true);
 
-    FMLRenderer renderer(window);
+    FML::Renderer renderer(window);
     // FMLTexture matrixTexture("resources/matrix.jpg");
-    FMLTexture matrixTexture("resources/DinoSprites.png");
+    FML::Texture matrixTexture("resources/DinoSprites.png");
 
     FML::Time::initialize();
     // render loop
@@ -102,21 +102,28 @@ int main()
         // -----
         // processInput(window);
 
-        renderer.clear(FMLColor(100, 100, 100));
+        renderer.clear(FML::Color(100, 100, 100));
+
+        renderer.setViewport(FML::Rect(100, 100, 600, 600));
 
         // render the triangle
-        renderer.drawRect(100, 100, 200, 200, FMLColor(0, 255, 0, 255), true, int(FML::Time::ticks / 10 * 1500) % 360);
-        renderer.drawRect(100, 300, 200, 200, FMLColor(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
-        renderer.drawRect(300, 100, 200, 200, FMLColor(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
-        renderer.drawRect(300, 300, 200, 200, FMLColor(255, 0, 255, 150), false, int(FML::Time::ticks / 10 * 500) % 360,
-                          Point(0, 0));
+        renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true,
+                          int(FML::Time::ticks / 10 * 1500) % 360);
+        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
+        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
+
+        renderer.setViewport(FML::Rect());
+
+        renderer.drawRect(300, 300, 200, 200, FML::Color(255, 0, 255, 150), false,
+                          int(FML::Time::ticks / 10 * 500) % 360, FML::Point(0, 0));
 
         RGB hue = hueToRGB(int(FML::Time::ticks / 10 * 1000) % 360);
-        renderer.drawTexture(matrixTexture, Rect(), 600, 600, 200, 200, false, false,
-                             int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(hue.r, hue.g, hue.b, 255));
+        renderer.drawTexture(matrixTexture, FML::Rect(), 600, 600, 200, 200, false, false,
+                             int(FML::Time::ticks / 10 * 1000) % 360, FML::Color(hue.r, hue.g, hue.b, 255));
 
-        renderer.drawCircle(300, 300, 400, FMLColor(hue.r, hue.g, hue.b), false,
+        renderer.drawCircle(300, 300, 400, FML::Color(hue.r, hue.g, hue.b), false,
                             400 - (int(FML::Time::ticks / 10 * 1000) % 400));
+
         // renderer.drawTexture(matrixTexture, Rect(), 600, 600, 300, 100, false, false,
         //                      int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(), Point(0, 0));
 

@@ -6,6 +6,9 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
+namespace FML
+{
+
 /**
  * @struct Vector2
  * @brief Defines a 2D vector.
@@ -105,5 +108,7 @@ struct Vector2
         return *this;
     }
 };
+
+} // namespace FML
 
 #endif

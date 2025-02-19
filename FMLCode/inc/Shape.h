@@ -2,6 +2,9 @@
 
 #include <vector>
 
+namespace FML
+{
+
 class Shape
 {
 public:
@@ -16,3 +19,5 @@ public:
 protected:
     unsigned int VBO, VAO;
 };
+
+} // namespace FML

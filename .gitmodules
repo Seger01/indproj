@@ -16,3 +16,6 @@
 [submodule "FMLCode/external/assimp"]
 	path = FMLCode/external/assimp
 	url = https://github.com/assimp/assimp.git
+[submodule "FMLCode/external/freetype"]
+	path = FMLCode/external/freetype
+	url = https://github.com/freetype/freetype.git

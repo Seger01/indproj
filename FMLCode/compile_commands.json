@@ -1,79 +1,79 @@
 [
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/FMLNormColor.cpp.o -c /home/seger/projects/indproj/FMLCode/src/FMLNormColor.cpp",
-  "file": "/home/seger/projects/indproj/FMLCode/src/FMLNormColor.cpp",
-  "output": "CMakeFiles/indproj.dir/src/FMLNormColor.cpp.o"
-},
-{
-  "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/FMLRenderer.cpp.o -c /home/seger/projects/indproj/FMLCode/src/FMLRenderer.cpp",
-  "file": "/home/seger/projects/indproj/FMLCode/src/FMLRenderer.cpp",
-  "output": "CMakeFiles/indproj.dir/src/FMLRenderer.cpp.o"
-},
-{
-  "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/FMLTexture.cpp.o -c /home/seger/projects/indproj/FMLCode/src/FMLTexture.cpp",
-  "file": "/home/seger/projects/indproj/FMLCode/src/FMLTexture.cpp",
-  "output": "CMakeFiles/indproj.dir/src/FMLTexture.cpp.o"
-},
-{
-  "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/FMLWindow.cpp.o -c /home/seger/projects/indproj/FMLCode/src/FMLWindow.cpp",
-  "file": "/home/seger/projects/indproj/FMLCode/src/FMLWindow.cpp",
-  "output": "CMakeFiles/indproj.dir/src/FMLWindow.cpp.o"
-},
-{
-  "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Mesh.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Mesh.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Mesh.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Mesh.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/Mesh.cpp",
   "output": "CMakeFiles/indproj.dir/src/Mesh.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Model.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Model.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Model.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Model.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/Model.cpp",
   "output": "CMakeFiles/indproj.dir/src/Model.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Shape.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Shape.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/NormColor.cpp.o -c /home/seger/projects/indproj/FMLCode/src/NormColor.cpp",
+  "file": "/home/seger/projects/indproj/FMLCode/src/NormColor.cpp",
+  "output": "CMakeFiles/indproj.dir/src/NormColor.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Renderer.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Renderer.cpp",
+  "file": "/home/seger/projects/indproj/FMLCode/src/Renderer.cpp",
+  "output": "CMakeFiles/indproj.dir/src/Renderer.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Shape.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Shape.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/Shape.cpp",
   "output": "CMakeFiles/indproj.dir/src/Shape.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/TexturedQuad.cpp.o -c /home/seger/projects/indproj/FMLCode/src/TexturedQuad.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Texture.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Texture.cpp",
+  "file": "/home/seger/projects/indproj/FMLCode/src/Texture.cpp",
+  "output": "CMakeFiles/indproj.dir/src/Texture.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/TexturedQuad.cpp.o -c /home/seger/projects/indproj/FMLCode/src/TexturedQuad.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/TexturedQuad.cpp",
   "output": "CMakeFiles/indproj.dir/src/TexturedQuad.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Time.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Time.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Time.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Time.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/Time.cpp",
   "output": "CMakeFiles/indproj.dir/src/Time.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/UnfilledBox.cpp.o -c /home/seger/projects/indproj/FMLCode/src/UnfilledBox.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/UnfilledBox.cpp.o -c /home/seger/projects/indproj/FMLCode/src/UnfilledBox.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/UnfilledBox.cpp",
   "output": "CMakeFiles/indproj.dir/src/UnfilledBox.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/cc  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -o CMakeFiles/indproj.dir/src/glad/glad.c.o -c /home/seger/projects/indproj/FMLCode/src/glad/glad.c",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/Window.cpp.o -c /home/seger/projects/indproj/FMLCode/src/Window.cpp",
+  "file": "/home/seger/projects/indproj/FMLCode/src/Window.cpp",
+  "output": "CMakeFiles/indproj.dir/src/Window.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build",
+  "command": "/usr/bin/cc  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -o CMakeFiles/indproj.dir/src/glad/glad.c.o -c /home/seger/projects/indproj/FMLCode/src/glad/glad.c",
   "file": "/home/seger/projects/indproj/FMLCode/src/glad/glad.c",
   "output": "CMakeFiles/indproj.dir/src/glad/glad.c.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/main.cpp.o -c /home/seger/projects/indproj/FMLCode/src/main.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/main.cpp.o -c /home/seger/projects/indproj/FMLCode/src/main.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/main.cpp",
   "output": "CMakeFiles/indproj.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build",
-  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/stb_image/stb_image_helper.cpp.o -c /home/seger/projects/indproj/FMLCode/src/stb_image/stb_image_helper.cpp",
+  "command": "/usr/bin/c++  -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/glfw/include -I/home/seger/projects/indproj/FMLCode/external/glm -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/indproj.dir/src/stb_image/stb_image_helper.cpp.o -c /home/seger/projects/indproj/FMLCode/src/stb_image/stb_image_helper.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/src/stb_image/stb_image_helper.cpp",
   "output": "CMakeFiles/indproj.dir/src/stb_image/stb_image_helper.cpp.o"
 },
@@ -1288,6 +1288,258 @@
   "command": "/usr/bin/c++ -DASSIMP_BUILD_DLL_EXPORT -DASSIMP_BUILD_NO_C4D_IMPORTER -DASSIMP_BUILD_NO_EXPORT -DASSIMP_BUILD_NO_M3D_EXPORTER -DASSIMP_BUILD_NO_M3D_IMPORTER -DASSIMP_BUILD_NO_OWN_ZLIB -DASSIMP_BUILD_NO_USD_IMPORTER -DASSIMP_BUILD_NO_VRML_IMPORTER -DASSIMP_IMPORTER_GLTF_USE_OPEN3DGC=1 -DOPENDDLPARSER_BUILD -DRAPIDJSON_HAS_STDSTRING=1 -DRAPIDJSON_NOMEMBERITERATORCLASS -Dassimp_EXPORTS -I/home/seger/projects/indproj/FMLCode/build/external/assimp/include -I/home/seger/projects/indproj/FMLCode/build/external/assimp -I/home/seger/projects/indproj/FMLCode/external/assimp/include -I/home/seger/projects/indproj/FMLCode/external/assimp/code -I/home/seger/projects/indproj/FMLCode/external/assimp/. -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../contrib/pugixml/src -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../contrib/utf8cpp/source -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../contrib/rapidjson/include -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../contrib -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../contrib/openddlparser/include -I/home/seger/projects/indproj/FMLCode/external/assimp/code/../include -I/home/seger/projects/indproj/FMLCode/build/external/assimp/code/../include -I/usr/include/minizip -fvisibility=hidden -fno-strict-aliasing -Wall  -O3 -DNDEBUG -std=gnu++17 -fPIC -Wno-dangling-reference -o CMakeFiles/assimp.dir/__/contrib/Open3DGC/o3dgcTriangleFans.cpp.o -c /home/seger/projects/indproj/FMLCode/external/assimp/contrib/Open3DGC/o3dgcTriangleFans.cpp",
   "file": "/home/seger/projects/indproj/FMLCode/external/assimp/contrib/Open3DGC/o3dgcTriangleFans.cpp",
   "output": "external/assimp/code/CMakeFiles/assimp.dir/__/contrib/Open3DGC/o3dgcTriangleFans.cpp.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/autofit/autofit.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/autofit/autofit.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/autofit/autofit.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/autofit/autofit.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftbase.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbase.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbase.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftbase.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftbbox.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbbox.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbbox.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftbbox.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftbdf.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbdf.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbdf.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftbdf.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftbitmap.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbitmap.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftbitmap.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftbitmap.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftcid.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftcid.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftcid.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftcid.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftfstype.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftfstype.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftfstype.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftfstype.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftgasp.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftgasp.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftgasp.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftgasp.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftglyph.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftglyph.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftglyph.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftglyph.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftgxval.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftgxval.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftgxval.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftgxval.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftinit.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftinit.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftinit.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftinit.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftmm.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftmm.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftmm.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftmm.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftotval.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftotval.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftotval.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftotval.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftpatent.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftpatent.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftpatent.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftpatent.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftpfr.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftpfr.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftpfr.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftpfr.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftstroke.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftstroke.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftstroke.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftstroke.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftsynth.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftsynth.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftsynth.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftsynth.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/fttype1.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/fttype1.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/fttype1.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/fttype1.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftwinfnt.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftwinfnt.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftwinfnt.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftwinfnt.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/bdf/bdf.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/bdf/bdf.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/bdf/bdf.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/bdf/bdf.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/bzip2/ftbzip2.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/bzip2/ftbzip2.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/bzip2/ftbzip2.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/bzip2/ftbzip2.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/cache/ftcache.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/cache/ftcache.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/cache/ftcache.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/cache/ftcache.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/cff/cff.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/cff/cff.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/cff/cff.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/cff/cff.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/cid/type1cid.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/cid/type1cid.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/cid/type1cid.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/cid/type1cid.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/gzip/ftgzip.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/gzip/ftgzip.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/gzip/ftgzip.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/gzip/ftgzip.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/lzw/ftlzw.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/lzw/ftlzw.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/lzw/ftlzw.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/lzw/ftlzw.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/pcf/pcf.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/pcf/pcf.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/pcf/pcf.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/pcf/pcf.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/pfr/pfr.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/pfr/pfr.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/pfr/pfr.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/pfr/pfr.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/psaux/psaux.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/psaux/psaux.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/psaux/psaux.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/psaux/psaux.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/pshinter/pshinter.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/pshinter/pshinter.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/pshinter/pshinter.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/pshinter/pshinter.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/psnames/psnames.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/psnames/psnames.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/psnames/psnames.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/psnames/psnames.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/raster/raster.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/raster/raster.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/raster/raster.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/raster/raster.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/sdf/sdf.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/sdf/sdf.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/sdf/sdf.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/sdf/sdf.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/sfnt/sfnt.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/sfnt/sfnt.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/sfnt/sfnt.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/smooth/smooth.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/smooth/smooth.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/smooth/smooth.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/smooth/smooth.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/svg/svg.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/svg/svg.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/svg/svg.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/svg/svg.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/truetype/truetype.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/truetype/truetype.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/truetype/truetype.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/truetype/truetype.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/type1/type1.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/type1/type1.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/type1/type1.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/type1/type1.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/type42/type42.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/type42/type42.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/type42/type42.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/type42/type42.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/winfonts/winfnt.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/winfonts/winfnt.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/winfonts/winfnt.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/winfonts/winfnt.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/builds/unix/ftsystem.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/builds/unix/ftsystem.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/builds/unix/ftsystem.c.o"
+},
+{
+  "directory": "/home/seger/projects/indproj/FMLCode/build/external/freetype",
+  "command": "/usr/bin/cc -DFT2_BUILD_LIBRARY -Dfreetype_EXPORTS -I/home/seger/projects/indproj/FMLCode/inc -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include -I/home/seger/projects/indproj/FMLCode/external/freetype/include -I/home/seger/projects/indproj/FMLCode/build/external/freetype/include/freetype/config -isystem /usr/include/harfbuzz -O3 -DNDEBUG -fPIC -fvisibility=hidden -pthread -o CMakeFiles/freetype.dir/src/base/ftdebug.c.o -c /home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftdebug.c",
+  "file": "/home/seger/projects/indproj/FMLCode/external/freetype/src/base/ftdebug.c",
+  "output": "external/freetype/CMakeFiles/freetype.dir/src/base/ftdebug.c.o"
 },
 {
   "directory": "/home/seger/projects/indproj/FMLCode/build/external/glfw/src",

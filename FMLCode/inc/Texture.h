@@ -3,11 +3,14 @@
 #include "Vector2.h"
 #include <string>
 
-class FMLTexture
+namespace FML
+{
+
+class Texture
 {
 public:
-    FMLTexture(const std::string& filePath);
-    virtual ~FMLTexture() = default;
+    Texture(const std::string& filePath);
+    virtual ~Texture() = default;
 
     void activate() const;
 
@@ -23,3 +26,5 @@ private:
     std::string mFilePath;
     Vector2 mSize;
 };
+
+} // namespace FML

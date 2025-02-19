@@ -1,19 +1,22 @@
 #pragma once
 
-#include "FMLColor.h"
-#include "FMLTexture.h"
+#include "Color.h"
 #include "GLFW/glfw3.h"
+#include "Texture.h"
 
 #include "Point.h"
 #include "Vector2.h"
 
-class FMLWindow
+namespace FML
+{
+
+class Window
 {
 public:
-    FMLWindow(int width, int height);
-    virtual ~FMLWindow() = default;
+    Window(int width, int height);
+    virtual ~Window() = default;
 
-    void clear(const FMLColor& color);
+    void clear(const Color& color);
     void show();
 
     Point getWindowSize();
@@ -29,3 +32,5 @@ private:
 
     int mScreenWidth, mScreenHeight;
 };
+
+} // namespace FML

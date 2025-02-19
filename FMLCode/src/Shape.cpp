@@ -8,6 +8,9 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <stb_image/stb_image.h>
 
+namespace FML
+{
+
 Shape::Shape()
 {
     glGenVertexArrays(1, &VAO);
@@ -50,3 +53,5 @@ void Shape::loadVertices(std::vector<float> vertices)
 }
 
 void Shape::bindVAO() { glBindVertexArray(VAO); }
+
+} // namespace FML
