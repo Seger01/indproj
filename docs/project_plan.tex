@@ -16,35 +16,44 @@
 
 \begin{document}
 
-\title{Individueel Project Plan}
+\title{Individueel Projectplan}
 \author{Seger Sars}
 \date{\today}
 \maketitle
 
-\section{Project Doel}
-Het doel van dit project is om een 2D renderer te maken die in staat is om verschillende dingen te renderer zoals textures, text, en shapes. 
-Het doel is een renderer die lijkt op de SDL \cite{sdl} library maar dan met een eigen bedachte API.
-Ik ga deze renderer maken in C++ en daarna integreren in een game engine die ik voor de systems programming minor heb gemaakt.
-Als dit niet te lang duurt ga ik daarna bezig met optimalisatie en/of het toevoegen van post-processing effecten zoals bloom, motion blur, of anti-aliasing.
-Voor optimalisatie zijn er een aantal dingen die ik kan doen zoals het gebruik van een texture atlas en batch rendering.
+\section{Projectdoel}
+Het doel van dit project is om een 2D-renderer te maken die in staat is om verschillende dingen te renderen, zoals textures, tekst en vormen. 
+Het doel is een renderer die lijkt op de SDL \cite{sdl} library, maar dan met een zelfbedachte API.
+Ik ga deze renderer maken in C++ en daarna integreren in een game-engine die ik voor de systems programming minor heb gemaakt.
+Als dit niet te lang duurt, ga ik daarna bezig met optimalisatie en/of het toevoegen van post-processing-effecten zoals bloom, motion blur of anti-aliasing.
+Voor optimalisatie zijn er een aantal dingen die ik kan doen, zoals het gebruik van een texture atlas en batch rendering.
 
-\section{Stappen plan}
+\section{Stappenplan}
 % hieronder lijst van stappen niet per week maar per stap
 Dit is een lijst van stappen die ik ga volgen tijdens dit project. 
-Ik weet niet zeker of ik aan de post processing effecten ga komen, maar ik wil ze wel proberen toe te voegen.
+Ik weet niet zeker of ik aan de post-processing-effecten ga toekomen, maar ik wil ze wel proberen toe te voegen.
 \begin{itemize}
-    \item Bekend worden met OpenGL met behulp van learopenopengl.com \cite{learnopengl}. Omdat ik opengl wil leren in C++, lijkt learnopengl een goede keuze.
-    \item API definiëren voor de basis features van de renderer.
-    \item Implementeren van de basis features in de renderer.
-    \item Integreren van de renderer in de game engine.
-    \item Performance tests uitvoeren om performance te meten en vergelijken met de SDL renderer implemntatie.
+    \item Bekend raken met OpenGL met behulp van learnopengl.com \cite{learnopengl}. Omdat ik OpenGL wil leren in C++, lijkt learnopengl een goede keuze.
+    \item API definiëren voor de basisfeatures van de renderer.
+    \item Implementeren van de basisfeatures in de renderer.
+    \item Integreren van de renderer in de game-engine.
+    \item Performancetests uitvoeren om de prestaties te meten en te vergelijken met de SDL-renderer-implementatie.
     \item Optimalisatie van de renderer door gebruik te maken van een texture atlas en batch rendering.
-    \item Toevoegen van sommige post-processing effecten zoals bloom, motion blur, of anti-aliasing.
+    \item Toevoegen van enkele post-processing-effecten zoals bloom, motion blur of anti-aliasing.
 \end{itemize}
+
+\section{Bevindingen}
+Hier komen belangrijke bevindingen te staan die ik tegenkom tijdens het project.
+
+
+\section{Repository}
+Mijn indproj-repository \cite{my_repo} is te vinden op GitHub.
+De engine die ik heb gemaakt voor de systems programming minor is ook te vinden op GitHub \cite{engine_bravo}.
+Daarnaast moet er nog een fork worden gemaakt van de engine waarin ik de renderer ga integreren.
 
 \newpage
 
-\section{References}
+\section{Referenties}
 \printbibliography
 
 \end{document}
