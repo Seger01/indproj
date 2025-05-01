@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=black, citecolor=black}
+\usepackage[backend=biber, style=numeric]{biblatex} % other styles: numeric, authoryear, apa
+\addbibresource{references.bib}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=20mm,
+    right=20mm,
+    top=20mm,
+    bottom=20mm,
+}
+
+\begin{document}
+
+\title{Individueel Project Plan}
+\author{Seger Sars}
+\date{\today}
+\maketitle
+
+\section{Project Doel}
+Het doel van dit project is om een 2D renderer te maken die in staat is om verschillende dingen te renderer zoals textures, text, en shapes. 
+Het doel is een renderer die lijkt op de SDL \cite{sdl} library maar dan met een eigen bedachte API.
+Ik ga deze renderer maken in C++ en daarna integreren in een game engine die ik voor de systems programming minor heb gemaakt.
+Als dit niet te lang duurt ga ik daarna bezig met optimalisatie en/of het toevoegen van post-processing effecten zoals bloom, motion blur, of anti-aliasing.
+Voor optimalisatie zijn er een aantal dingen die ik kan doen zoals het gebruik van een texture atlas en batch rendering.
+
+\section{Stappen plan}
+% hieronder lijst van stappen niet per week maar per stap
+Dit is een lijst van stappen die ik ga volgen tijdens dit project. 
+Ik weet niet zeker of ik aan de post processing effecten ga komen, maar ik wil ze wel proberen toe te voegen.
+\begin{itemize}
+    \item Bekend worden met OpenGL met behulp van learopenopengl.com \cite{learnopengl}. Omdat ik opengl wil leren in C++, lijkt learnopengl een goede keuze.
+    \item API definiëren voor de basis features van de renderer.
+    \item Implementeren van de basis features in de renderer.
+    \item Integreren van de renderer in de game engine.
+    \item Performance tests uitvoeren om performance te meten en vergelijken met de SDL renderer implemntatie.
+    \item Optimalisatie van de renderer door gebruik te maken van een texture atlas en batch rendering.
+    \item Toevoegen van sommige post-processing effecten zoals bloom, motion blur, of anti-aliasing.
+\end{itemize}
+
+\newpage
+
+\section{References}
+\printbibliography
+
+\end{document}
