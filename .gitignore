@@ -31,13 +31,13 @@
 *.app
 
 # build folder
-code/build/
-FMLCode/build/
+renderer_code/build/
+learopenglproj/build/
 
 # ignore compile commands
-code/compile_commands.json
-FMLCode/compile_commands.json
+renderer_code/compile_commands.json
+learnopenglproj/compile_commands.json
 
 # ignore text editor cache
-code/.cache/
-FMLCode/.cache/
+renderer_code/.cache/
+learnopenglproj/.cache/

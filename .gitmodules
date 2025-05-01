@@ -1,21 +1,21 @@
-[submodule "code/external/glfw"]
-	path = code/external/glfw
+[submodule "renderer_code/external/glfw"]
+	path = renderer_code/external/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "code/external/glm"]
-	path = code/external/glm
+[submodule "renderer_code/external/glm"]
+	path = renderer_code/external/glm
 	url = https://github.com/g-truc/glm.git
-[submodule "code/external/assimp"]
-	path = code/external/assimp
+[submodule "renderer_code/external/assimp"]
+	path = renderer_code/external/assimp
 	url = https://github.com/assimp/assimp.git
-[submodule "FMLCode/external/glfw"]
-	path = FMLCode/external/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "FMLCode/external/glm"]
-	path = FMLCode/external/glm
-	url = https://github.com/g-truc/glm.git
-[submodule "FMLCode/external/assimp"]
-	path = FMLCode/external/assimp
-	url = https://github.com/assimp/assimp.git
-[submodule "FMLCode/external/freetype"]
-	path = FMLCode/external/freetype
+[submodule "renderer_code/external/freetype"]
+	path = renderer_code/external/freetype
 	url = https://github.com/freetype/freetype.git
+[submodule "learnopenglproj/external/glfw"]
+	path = learnopenglproj/external/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "learnopenglproj/external/assimp"]
+	path = learnopenglproj/external/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "learnopenglproj/external/glm"]
+	path = learnopenglproj/external/glm
+	url = https://github.com/g-truc/glm.git
