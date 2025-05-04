@@ -1,4 +1,5 @@
 #include "Window.h"
+#include <glad/glad.h>
 
 #include <GLFW/glfw3.h>
 
@@ -45,6 +46,16 @@ Window::Window(int width, int height) : mScreenWidth(width), mScreenHeight(heigh
     glfwSetFramebufferSizeCallback(window, funcPtr);
 
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
+    // glad: load all OpenGL function pointers
+    // ---------------------------------------
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+    {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return;
+    }
+
+    stbi_set_flip_vertically_on_load(true);
 }
 
 void Window::clear(const Color& color)

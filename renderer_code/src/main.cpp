@@ -10,18 +10,14 @@
 #include <string>
 #include <thread>
 
-#include "Camera.h"
 #include "Color.h"
-#include "Mesh.h"
-#include "Model.h"
 #include "Rect.h"
 #include "Renderer.h"
-#include "Shader.h"
-#include "Shape.h"
 #include "Texture.h"
-#include "TexturedQuad.h"
 #include "Time.h"
 #include "Window.h"
+
+#include "ft2build.h"
 
 unsigned int loadTexture(std::string fileName);
 
@@ -78,16 +74,6 @@ int main()
 {
     FML::Window window(Screen_width, Screen_height);
 
-    // glad: load all OpenGL function pointers
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        std::cout << "Failed to initialize GLAD" << std::endl;
-        return -1;
-    }
-
-    stbi_set_flip_vertically_on_load(true);
-
     FML::Renderer renderer(window);
     // FMLTexture matrixTexture("resources/matrix.jpg");
     FML::Texture matrixTexture("resources/DinoSprites.png");
@@ -106,11 +92,10 @@ int main()
 
         renderer.setViewport(FML::Rect(100, 100, 600, 600));
 
-        // render the triangle
-        renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true,
-                          int(FML::Time::ticks / 10 * 1500) % 360);
-        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
-        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
+        renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true, 0);
+        // renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
+        // renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) %
+        // 360);
 
         renderer.setViewport(FML::Rect());
 
@@ -171,18 +156,6 @@ void processInput(GLFWwindow* window)
     // }
 }
 
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-// ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-    // make sure the viewport matches the new window dimensions; note that width and
-    // height will be significantly larger than specified on retina displays.
-    glViewport(0, 0, width, height);
-
-    Screen_width = width;
-    Screen_height = height;
-}
-
 void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 {
     // static float lastX = xpos, lastY = ypos;
@@ -201,40 +174,40 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) { /*  camera.ProcessMouseScroll(yoffset);  */ }
 
-unsigned int loadTexture(std::string filePath)
-{
-
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-
-    int width, height, nrComponents;
-    unsigned char* data = stbi_load(filePath.c_str(), &width, &height, &nrComponents, 0);
-    if (data)
-    {
-        GLenum format;
-        if (nrComponents == 1)
-            format = GL_RED;
-        else if (nrComponents == 3)
-            format = GL_RGB;
-        else if (nrComponents == 4)
-            format = GL_RGBA;
-
-        glBindTexture(GL_TEXTURE_2D, textureID);
-        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-        stbi_image_free(data);
-    }
-    else
-    {
-        std::cout << "Texture failed to load at path: " << filePath << std::endl;
-        stbi_image_free(data);
-    }
-
-    return textureID;
-}
+// unsigned int loadTexture(std::string filePath)
+// {
+//
+//     unsigned int textureID;
+//     glGenTextures(1, &textureID);
+//
+//     int width, height, nrComponents;
+//     unsigned char* data = stbi_load(filePath.c_str(), &width, &height, &nrComponents, 0);
+//     if (data)
+//     {
+//         GLenum format;
+//         if (nrComponents == 1)
+//             format = GL_RED;
+//         else if (nrComponents == 3)
+//             format = GL_RGB;
+//         else if (nrComponents == 4)
+//             format = GL_RGBA;
+//
+//         glBindTexture(GL_TEXTURE_2D, textureID);
+//         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+//         glGenerateMipmap(GL_TEXTURE_2D);
+//
+//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//
+//         stbi_image_free(data);
+//     }
+//     else
+//     {
+//         std::cout << "Texture failed to load at path: " << filePath << std::endl;
+//         stbi_image_free(data);
+//     }
+//
+//     return textureID;
+// }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <glad/glad.h>
+
 #include "Color.h"
 #include "GLFW/glfw3.h"
 #include "Texture.h"
