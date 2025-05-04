@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Font.h"
 #include "glad/glad.h"
 
 #include "Color.h"
@@ -24,6 +25,9 @@ public:
     void clear(const Color& color);
     void show();
 
+    void drawChar(const Character& character, int x, int y, float scale, const Color& color);
+
+    void renderText(const Font& font, const std::string& text, int x, int y, float scale, const Color& color);
     void drawTexture(const Texture& texture, const Rect& source, int x, int y, int width, int height,
                      bool flipX = false, bool flipY = false, float rotation = 0.0f,
                      const Color& colorFilter = Color(255, 255, 255, 255),
@@ -40,6 +44,7 @@ public:
 private:
     Window& window;
 
+    Shader fontShader;
     Shader texturedQuadShader;
     Shader rectShader;
     Shader circleShader;

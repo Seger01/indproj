@@ -11,6 +11,7 @@
 #include <thread>
 
 #include "Color.h"
+#include "Font.h"
 #include "Rect.h"
 #include "Renderer.h"
 #include "Texture.h"
@@ -79,6 +80,8 @@ int main()
     // FMLTexture matrixTexture("resources/matrix.jpg");
     FML::Texture matrixTexture("resources/DinoSprites.png");
 
+    FML::Font font("resources/fonts/joystixmonospace.otf", 48);
+
     FML::Time::initialize();
     // render loop
     // -----------
@@ -94,8 +97,10 @@ int main()
         renderer.setViewport(FML::Rect(200, 200, 10000, 10000));
 
         renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true, 0);
-        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
-        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
+        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 2400) % 360,
+                          FML::Point(400, 400));
+        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360,
+                          FML::Point(0, 0));
 
         renderer.setViewport(FML::Rect());
 
@@ -108,6 +113,13 @@ int main()
 
         renderer.drawCircle(300, 300, 400, FML::Color(hue.r, hue.g, hue.b), false,
                             400 - (int(FML::Time::ticks / 10 * 1000) % 400));
+
+        // renderer.drawChar(font.charSet['a'], 'a', 100, 100, 1.0f, FML::Color(255, 255, 255));
+        // renderer.renderText(font, "He", 100, 100, 1.0f, FML::Color(255, 255, 255));
+        std::string text = "Hello World! GGGG";
+        std::string actualText = text.substr(0, int(FML::Time::ticks / 10 * 20) % text.length());
+        renderer.renderText(font, actualText, 100, (int(FML::Time::ticks / 10 * 2000) % 800), 1.0f,
+                            FML::Color(hue.r, hue.g, hue.b));
 
         renderer.show();
         glfwPollEvents();

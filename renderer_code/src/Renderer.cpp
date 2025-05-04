@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 
+#include "Font.h"
 #include "GLFW/glfw3.h"
 
 #include "Window.h"
@@ -29,7 +30,8 @@ namespace FML
 Renderer::Renderer(Window& window)
     : texturedQuadShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"),
       rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"),
-      circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"), window(window)
+      circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"),
+      fontShader("shaders/font_shader/vertex_shader.glsl", "shaders/font_shader/fragment_shader.glsl"), window(window)
 {
     texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
@@ -47,6 +49,50 @@ void Renderer::clear(const Color& color)
 }
 
 void Renderer::show() { glfwSwapBuffers(window.getWindow()); }
+
+void Renderer::drawChar(const Character& character, int x, int y, float scale, const Color& color) {}
+
+void Renderer::renderText(const Font& font, const std::string& text, int x, int y, float scale, const Color& color)
+{
+    texturedQuad.bindVAO();
+    fontShader.use();
+    fontShader.setInt("texture1", 0);
+
+    Point viewportSize = getViewportSize();
+
+    glm::mat4 projection = glm::ortho(0.0f, (float)viewportSize.x, (float)viewportSize.y, 0.0f, -1.0f, 1.0f);
+
+    fontShader.setMat4("projection", projection);
+    fontShader.setVec4("textColor",
+                       glm::vec4(color.normalize().r, color.normalize().g, color.normalize().b, color.normalize().a));
+
+    // Render glyph texture over quad
+    for (const char& c : text)
+    {
+        const Character& ch = font.charSet[c];
+        ch.texture.activate();
+
+        glm::mat4 model = glm::mat4(1.0f);
+
+        model = glm::translate(model, glm::vec3(x, y, 0.0f));
+        int width = ch.Size.x * scale;
+        int height = ch.Size.y * scale;
+
+        model = glm::scale(model, glm::vec3(width, height, 1.0f));
+
+        fontShader.setMat4("model", model);
+
+        float xpos = x + ch.Bearing.x * scale;
+        float ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
+
+        float w = ch.Size.x * scale;
+        float h = ch.Size.y * scale;
+
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+
+        x += (ch.Advance >> 6) * scale; // * scale
+    }
+}
 
 void Renderer::drawTexture(const Texture& texture, const Rect& source, int x, int y, int width, int height, bool flipX,
                            bool flipY, float rotation, const Color& colorFilter, const Point& rotationalCenter)
