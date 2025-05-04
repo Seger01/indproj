@@ -182,7 +182,7 @@ void Renderer::setViewport(const Rect& rect)
         return;
     }
 
-    glViewport(rect.x, rect.y, rect.w, rect.h);
+    glViewport(rect.x, window.getWindowSize().y - rect.y - rect.h, rect.w, rect.h);
 }
 
 Rect Renderer::getViewport()

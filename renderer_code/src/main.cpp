@@ -18,6 +18,7 @@
 #include "Window.h"
 
 #include "ft2build.h"
+#include FT_FREETYPE_H
 
 unsigned int loadTexture(std::string fileName);
 
@@ -90,12 +91,11 @@ int main()
 
         renderer.clear(FML::Color(100, 100, 100));
 
-        renderer.setViewport(FML::Rect(100, 100, 600, 600));
+        renderer.setViewport(FML::Rect(200, 200, 10000, 10000));
 
         renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true, 0);
-        // renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
-        // renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) %
-        // 360);
+        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 1200) % 360);
+        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360);
 
         renderer.setViewport(FML::Rect());
 
@@ -108,9 +108,6 @@ int main()
 
         renderer.drawCircle(300, 300, 400, FML::Color(hue.r, hue.g, hue.b), false,
                             400 - (int(FML::Time::ticks / 10 * 1000) % 400));
-
-        // renderer.drawTexture(matrixTexture, Rect(), 600, 600, 300, 100, false, false,
-        //                      int(FML::Time::ticks / 10 * 1000) % 360, FMLColor(), Point(0, 0));
 
         renderer.show();
         glfwPollEvents();
