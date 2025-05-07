@@ -24,7 +24,7 @@
 #include "Texture.h"
 #include "Window.h"
 
-namespace FML
+namespace SML
 {
 
 Renderer::Renderer(Window& window)
@@ -244,4 +244,4 @@ Point Renderer::getViewportSize()
     return Point(viewport.w, viewport.h);
 }
 
-} // namespace FML
+} // namespace SML

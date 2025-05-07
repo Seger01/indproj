@@ -74,52 +74,53 @@ RGB hueToRGB(float hue)
 
 int main()
 {
-    FML::Window window(Screen_width, Screen_height);
+    SML::Window window(Screen_width, Screen_height);
 
-    FML::Renderer renderer(window);
+    SML::Renderer renderer(window);
     // FMLTexture matrixTexture("resources/matrix.jpg");
-    FML::Texture matrixTexture("resources/DinoSprites.png");
+    SML::Texture matrixTexture("resources/DinoSprites.png");
 
-    FML::Font font("resources/fonts/joystixmonospace.otf", 48);
+    SML::Font font("resources/fonts/joystixmonospace.otf", 48);
 
-    FML::Time::initialize();
+    SML::Time::initialize();
     // render loop
     // -----------
     while (!window.shouldClose())
     {
-        FML::Time::update();
+        SML::Time::update();
         // input
         // -----
         // processInput(window);
 
-        renderer.clear(FML::Color(100, 100, 100));
+        renderer.clear(SML::Color(100, 100, 100));
 
-        renderer.setViewport(FML::Rect(200, 200, 10000, 10000));
+        renderer.setViewport(SML::Rect(200, 200, 10000, 10000));
 
-        renderer.drawRect(100, 100, 200, 200, FML::Color(0, 255, 0, 255), true, 0);
-        renderer.drawRect(100, 300, 200, 200, FML::Color(0, 0, 255), false, int(FML::Time::ticks / 10 * 2400) % 360,
-                          FML::Point(400, 400));
-        renderer.drawRect(300, 100, 200, 200, FML::Color(255, 255, 0), false, int(FML::Time::ticks / 10 * 800) % 360,
-                          FML::Point(0, 0));
+        renderer.drawRect(100, 100, 200, 200, SML::Color(0, 255, 0, 255), true, 0);
+        renderer.drawRect(100, 300, 200, 200, SML::Color(0, 0, 255), false, int(SML::Time::ticks / 10 * 2400) % 360,
+                          SML::Point(400, 400));
+        renderer.drawRect(300, 100, 200, 200, SML::Color(255, 255, 0), false, int(SML::Time::ticks / 10 * 800) % 360,
+                          SML::Point(0, 0));
 
-        renderer.setViewport(FML::Rect());
+        renderer.setViewport(SML::Rect());
 
-        renderer.drawRect(300, 300, 200, 200, FML::Color(255, 0, 255, 150), false,
-                          int(FML::Time::ticks / 10 * 500) % 360, FML::Point(0, 0));
+        renderer.drawRect(300, 300, 200, 200, SML::Color(255, 0, 255, 150), false,
+                          int(SML::Time::ticks / 10 * 500) % 360, SML::Point(0, 0));
 
-        RGB hue = hueToRGB(int(FML::Time::ticks / 10 * 1000) % 360);
-        renderer.drawTexture(matrixTexture, FML::Rect(), 600, 600, 200, 200, false, false,
-                             int(FML::Time::ticks / 10 * 1000) % 360, FML::Color(hue.r, hue.g, hue.b, 255));
+        RGB hue = hueToRGB(int(SML::Time::ticks / 10 * 1000) % 360);
+        renderer.drawTexture(matrixTexture, SML::Rect(), 600, 600, 200, 200, false, false,
+                             int(SML::Time::ticks / 10 * 1000) % 360, SML::Color(hue.r, hue.g, hue.b, 255));
 
-        renderer.drawCircle(300, 300, 400, FML::Color(hue.r, hue.g, hue.b), false,
-                            400 - (int(FML::Time::ticks / 10 * 1000) % 400));
+        renderer.drawCircle(300, 300, 400, SML::Color(hue.r, hue.g, hue.b), false,
+                            400 - (int(SML::Time::ticks / 10 * 1000) % 400));
 
-        // renderer.drawChar(font.charSet['a'], 'a', 100, 100, 1.0f, FML::Color(255, 255, 255));
-        // renderer.renderText(font, "He", 100, 100, 1.0f, FML::Color(255, 255, 255));
+        // renderer.drawChar(font.charSet['a'], 'a', 100, 100, 1.0f, SML::Color(255,
+        // 255, 255)); renderer.renderText(font, "He", 100, 100, 1.0f,
+        // SML::Color(255, 255, 255));
         std::string text = "Hello World! GGGG";
-        std::string actualText = text.substr(0, int(FML::Time::ticks / 10 * 20) % text.length());
-        renderer.renderText(font, actualText, 100, (int(FML::Time::ticks / 10 * 2000) % 800), 1.0f,
-                            FML::Color(hue.r, hue.g, hue.b));
+        std::string actualText = text.substr(0, int(SML::Time::ticks / 10 * 20) % text.length());
+        renderer.renderText(font, actualText, 100, (int(SML::Time::ticks / 10 * 2000) % 800), 1.0f,
+                            SML::Color(hue.r, hue.g, hue.b));
 
         renderer.show();
         glfwPollEvents();
@@ -134,7 +135,8 @@ int main()
     return 0;
 }
 
-// process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
+// process all input: query GLFW whether relevant keys are pressed/released this
+// frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
 void processInput(GLFWwindow* window)
 {
@@ -142,18 +144,24 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
     //
     // if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::FORWARD, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::FORWARD,
+    //     (float)own::Time::deltaTime);
     // if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::LEFT, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::LEFT,
+    //     (float)own::Time::deltaTime);
     // if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::BACKWARD, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::BACKWARD,
+    //     (float)own::Time::deltaTime);
     // if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::RIGHT, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::RIGHT,
+    //     (float)own::Time::deltaTime);
     //
     // if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::UP, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::UP,
+    //     (float)own::Time::deltaTime);
     // if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-    //     camera.ProcessKeyboard(Camera_Movement::DOWN, (float)own::Time::deltaTime);
+    //     camera.ProcessKeyboard(Camera_Movement::DOWN,
+    //     (float)own::Time::deltaTime);
     //
     // if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
     // {
@@ -170,9 +178,8 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
     // static float lastX = xpos, lastY = ypos;
     //
     // float xoffset = xpos - lastX;
-    // float yoffset = lastY - ypos; // reversed since y-coordinates range from bottom to top
-    // lastX = xpos;
-    // lastY = ypos;
+    // float yoffset = lastY - ypos; // reversed since y-coordinates range from
+    // bottom to top lastX = xpos; lastY = ypos;
     //
     // const float sensitivity = 0.1f;
     // xoffset *= sensitivity;
@@ -190,8 +197,8 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) { /*  c
 //     glGenTextures(1, &textureID);
 //
 //     int width, height, nrComponents;
-//     unsigned char* data = stbi_load(filePath.c_str(), &width, &height, &nrComponents, 0);
-//     if (data)
+//     unsigned char* data = stbi_load(filePath.c_str(), &width, &height,
+//     &nrComponents, 0); if (data)
 //     {
 //         GLenum format;
 //         if (nrComponents == 1)
@@ -202,20 +209,21 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) { /*  c
 //             format = GL_RGBA;
 //
 //         glBindTexture(GL_TEXTURE_2D, textureID);
-//         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-//         glGenerateMipmap(GL_TEXTURE_2D);
+//         glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format,
+//         GL_UNSIGNED_BYTE, data); glGenerateMipmap(GL_TEXTURE_2D);
 //
 //         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 //         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+//         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+//         GL_LINEAR_MIPMAP_LINEAR); glTexParameteri(GL_TEXTURE_2D,
+//         GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 //
 //         stbi_image_free(data);
 //     }
 //     else
 //     {
-//         std::cout << "Texture failed to load at path: " << filePath << std::endl;
-//         stbi_image_free(data);
+//         std::cout << "Texture failed to load at path: " << filePath <<
+//         std::endl; stbi_image_free(data);
 //     }
 //
 //     return textureID;

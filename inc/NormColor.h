@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FML
+namespace SML
 {
 
 class Color;
@@ -19,4 +19,4 @@ public:
     float r, g, b, a;
 };
 
-} // namespace FML
+} // namespace SML

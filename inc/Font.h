@@ -11,7 +11,7 @@
 
 #define CHAR_SET_SIZE 128
 
-namespace FML
+namespace SML
 {
 
 struct Character
@@ -73,4 +73,4 @@ public:
 
     Character charSet[CHAR_SET_SIZE];
 };
-} // namespace FML
+} // namespace SML

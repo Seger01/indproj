@@ -6,7 +6,7 @@
 #ifndef RECT_H
 #define RECT_H
 
-namespace FML
+namespace SML
 {
 
 /**
@@ -33,6 +33,6 @@ public:
     int w = 0, h = 0;
 };
 
-} // namespace FML
+} // namespace SML
 
 #endif

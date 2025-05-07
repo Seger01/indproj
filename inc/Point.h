@@ -6,7 +6,7 @@
 #ifndef POINT_H
 #define POINT_H
 
-namespace FML
+namespace SML
 {
 
 /**
@@ -19,6 +19,6 @@ struct Point
     int y = 0;
 };
 
-} // namespace FML
+} // namespace SML
 
 #endif

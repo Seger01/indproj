@@ -1,8 +1,8 @@
 #include "UnfilledBox.h"
 
-namespace FML
+namespace SML
 {
 
 UnfilledBox::UnfilledBox() : Shape() { loadVertices(vertices); }
 
-} // namespace FML
+} // namespace SML

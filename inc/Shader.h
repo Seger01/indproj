@@ -9,6 +9,9 @@
 #include <sstream>
 #include <string>
 
+namespace SML
+{
+
 class Shader
 {
 public:
@@ -176,3 +179,5 @@ private:
         }
     }
 };
+
+} // namespace SML

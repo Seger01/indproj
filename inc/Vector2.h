@@ -6,7 +6,7 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
-namespace FML
+namespace SML
 {
 
 /**
@@ -109,6 +109,6 @@ struct Vector2
     }
 };
 
-} // namespace FML
+} // namespace SML
 
 #endif

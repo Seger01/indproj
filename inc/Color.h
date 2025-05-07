@@ -4,7 +4,7 @@
 
 #include "NormColor.h"
 
-namespace FML
+namespace SML
 {
 
 class Color
@@ -21,4 +21,4 @@ public:
     uint8_t r, g, b, a;
 };
 
-} // namespace FML
+} // namespace SML

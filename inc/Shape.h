@@ -2,7 +2,7 @@
 
 #include <vector>
 
-namespace FML
+namespace SML
 {
 
 class Shape
@@ -20,4 +20,4 @@ protected:
     unsigned int VBO, VAO;
 };
 
-} // namespace FML
+} // namespace SML

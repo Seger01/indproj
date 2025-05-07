@@ -31,13 +31,13 @@
 *.app
 
 # build folder
-renderer_code/build/
+build/
 learopenglproj/build/
 
 # ignore compile commands
-renderer_code/compile_commands.json
+compile_commands.json
 learnopenglproj/compile_commands.json
 
 # ignore text editor cache
-renderer_code/.cache/
+cache/
 learnopenglproj/.cache/

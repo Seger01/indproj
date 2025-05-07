@@ -5,7 +5,7 @@
 
 #pragma once
 
-namespace FML
+namespace SML
 {
 
 /**
@@ -18,4 +18,4 @@ struct FRect
     float w = 0, h = 0;
 };
 
-} // namespace FML
+} // namespace SML

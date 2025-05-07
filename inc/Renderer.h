@@ -10,7 +10,7 @@
 #include "TexturedQuad.h"
 #include "UnfilledBox.h"
 
-namespace FML
+namespace SML
 {
 
 class Window;
@@ -53,4 +53,4 @@ private:
     UnfilledBox unfilledBox;
 };
 
-} // namespace FML
+} // namespace SML

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <stb_image/stb_image.h>
 
-namespace FML
+namespace SML
 {
 Texture::Texture() : loaded(false) {}
 
@@ -119,4 +119,4 @@ void Texture::loadTexture()
     }
 }
 
-} // namespace FML
+} // namespace SML

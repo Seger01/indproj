@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-namespace FML
+namespace SML
 {
 
 class Texture
@@ -33,4 +33,4 @@ private:
     Vector2 mSize;
 };
 
-} // namespace FML
+} // namespace SML

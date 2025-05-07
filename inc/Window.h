@@ -9,7 +9,7 @@
 #include "Point.h"
 #include "Vector2.h"
 
-namespace FML
+namespace SML
 {
 
 class Window
@@ -35,4 +35,4 @@ private:
     int mScreenWidth, mScreenHeight;
 };
 
-} // namespace FML
+} // namespace SML

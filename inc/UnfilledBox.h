@@ -4,14 +4,14 @@
 
 #include "Shape.h"
 
-namespace FML
+namespace SML
 {
 
-class TexturedQuad : public Shape
+class UnfilledBox : public Shape
 {
 public:
-    TexturedQuad();
-    virtual ~TexturedQuad() = default;
+    UnfilledBox();
+    virtual ~UnfilledBox() = default;
 
 private:
     // define vertices for a triangle
@@ -20,11 +20,8 @@ private:
         -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
         -0.5f, 0.5f,  0.0f, 0.0f, 1.0f, // top left
         0.5f,  0.5f,  0.0f, 1.0f, 1.0f, // top right
-
-        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
-        0.5f,  0.5f,  0.0f, 1.0f, 1.0f, // top right
         0.5f,  -0.5f, 0.0f, 1.0f, 0.0f  // bottom right
     };
 };
 
-} // namespace FML
+} // namespace SML

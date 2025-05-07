@@ -1,8 +1,8 @@
 #include "TexturedQuad.h"
 
-namespace FML
+namespace SML
 {
 
 TexturedQuad::TexturedQuad() : Shape() { loadVertices(vertices); }
 
-} // namespace FML
+} // namespace SML

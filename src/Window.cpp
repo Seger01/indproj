@@ -13,7 +13,7 @@
 #include "Point.h"
 #include "Vector2.h"
 
-namespace FML
+namespace SML
 {
 
 Window::Window(int width, int height) : mScreenWidth(width), mScreenHeight(height)
@@ -83,4 +83,4 @@ bool Window::shouldClose() { return glfwWindowShouldClose(window); }
 //     glViewport(0, 0, width, height);
 // }
 
-} // namespace FML
+} // namespace SML
