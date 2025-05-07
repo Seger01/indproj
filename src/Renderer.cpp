@@ -31,12 +31,37 @@ namespace SML
 //   circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"),
 //   fontShader("shaders/font_shader/vertex_shader.glsl", "shaders/font_shader/fragment_shader.glsl"), window(window)
 
-Renderer::Renderer(Window& window)
-    : texturedQuadShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"),
-      rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"),
-      circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"),
-      fontShader("shaders/font_shader/vertex_shader.glsl", "shaders/font_shader/fragment_shader.glsl"), window(window)
+Renderer::Renderer(Window& window) : window(window)
 {
+    const std::string texturedQuadVertexShader =
+#include "vertex_shader.h"
+        ;
+    const std::string texturedQuadFragmentShader =
+#include "fragment_shader.h"
+        ;
+    const std::string rectVertexShader =
+#include "colored_rect/vertex_shader.h"
+        ;
+    const std::string rectFragmentShader =
+#include "colored_rect/fragment_shader.h"
+        ;
+    const std::string circleVertexShader =
+#include "circle/vertex_shader.h"
+        ;
+    const std::string circleFragmentShader =
+#include "circle/fragment_shader.h"
+        ;
+    const std::string fontVertexShader =
+#include "font_shader/vertex_shader.h"
+        ;
+    const std::string fontFragmentShader =
+#include "font_shader/fragment_shader.h"
+        ;
+
+    texturedQuadShader = Shader(texturedQuadVertexShader, texturedQuadFragmentShader);
+    rectShader = Shader(rectVertexShader, rectFragmentShader);
+    circleShader = Shader(circleVertexShader, circleFragmentShader);
+    fontShader = Shader(fontVertexShader, fontFragmentShader);
 
     texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
