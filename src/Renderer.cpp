@@ -31,14 +31,14 @@ namespace SML
 //   circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"),
 //   fontShader("shaders/font_shader/vertex_shader.glsl", "shaders/font_shader/fragment_shader.glsl"), window(window)
 
-Renderer::Renderer(Window& window) : window(window)
+Renderer::Renderer(Window& window)
+    : texturedQuadShader("shaders/vertex_shader.glsl", "shaders/fragment_shader.glsl"),
+      rectShader("shaders/colored_rect/vertex_shader.glsl", "shaders/colored_rect/fragment_shader.glsl"),
+      circleShader("shaders/circle/vertex_shader.glsl", "shaders/circle/fragment_shader.glsl"),
+      fontShader("shaders/font_shader/vertex_shader.glsl", "shaders/font_shader/fragment_shader.glsl"), window(window)
 {
-    // Initialize shaders
-    std::string texturedQuadVertexShader = R"
-        #include "shaders / vertex_shader.glsl " 
-                                               "
 
-                                           texturedQuadShader.use();
+    texturedQuadShader.use();
     texturedQuadShader.setInt("texture1", 0);
 
     glDisable(GL_DEPTH_TEST);
