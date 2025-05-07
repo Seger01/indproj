@@ -17,6 +17,9 @@ set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/external)
 # Include directories
 include_directories(${INC_DIR})
 
+# add the /shaders directory to the include path
+include_directories(${CMAKE_SOURCE_DIR}/shaders)
+
 # Collect all source files recursively
 file(GLOB_RECURSE SOURCES ${SRC_DIR}/*.cpp ${SRC_DIR}/*.c)
 

@@ -32,12 +32,9 @@
 
 # build folder
 build/
-learopenglproj/build/
 
 # ignore compile commands
 compile_commands.json
-learnopenglproj/compile_commands.json
 
 # ignore text editor cache
-cache/
-learnopenglproj/.cache/
+.cache/
