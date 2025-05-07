@@ -12,3 +12,4 @@ Date,Time,Duration(in hours),Activity
 2025-02-16, 15:00, 2   , Worked on circle rendering (source: The Cherno (youtube) https://www.youtube.com/watch?v=xf7Y988cPRk)
 2025-02-19, 19:15, 1.5 , Reworked renderer naming and added viewport support
 2025-05-04, 14:00, 3.0 , Started working on the Text rendering system
+2025-05-07, 20:00, 2.5 , Finished basic text rendering and started on porting to game engine
